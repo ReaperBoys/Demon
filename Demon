@@ -1,0 +1,253 @@
+--// DEMON UI LIBRARY WITH MULTIPLE THEMES
+--// made by justsscripts
+
+local Demon = {}
+Demon.Flags = {}
+Demon.CurrentTheme = "Black"
+
+--------------------------------------------------
+-- SERVICES
+--------------------------------------------------
+local Players = game:GetService("Players")
+local UIS = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
+
+local Player = Players.LocalPlayer
+
+--------------------------------------------------
+-- THEMES
+--------------------------------------------------
+local Themes = {
+    Black = {
+        Background = Color3.fromRGB(14,14,14),
+        Dark = Color3.fromRGB(20,20,20),
+        Light = Color3.fromRGB(30,30,30),
+        Text = Color3.fromRGB(255,255,255)
+    },
+    Red = {
+        Background = Color3.fromRGB(30,0,0),
+        Dark = Color3.fromRGB(50,0,0),
+        Light = Color3.fromRGB(80,0,0),
+        Text = Color3.fromRGB(255,200,200)
+    },
+    Blue = {
+        Background = Color3.fromRGB(0,0,30),
+        Dark = Color3.fromRGB(0,0,50),
+        Light = Color3.fromRGB(0,0,80),
+        Text = Color3.fromRGB(200,200,255)
+    },
+    White = {
+        Background = Color3.fromRGB(240,240,240),
+        Dark = Color3.fromRGB(200,200,200),
+        Light = Color3.fromRGB(255,255,255),
+        Text = Color3.fromRGB(0,0,0)
+    },
+    Purple = {
+        Background = Color3.fromRGB(40,0,40),
+        Dark = Color3.fromRGB(60,0,60),
+        Light = Color3.fromRGB(90,0,90),
+        Text = Color3.fromRGB(220,200,255)
+    }
+}
+
+local THEME = Themes[Demon.CurrentTheme]
+
+--------------------------------------------------
+-- GUI
+--------------------------------------------------
+local GUI = Instance.new("ScreenGui")
+GUI.Name = "DemonUI"
+GUI.ResetOnSpawn = false
+GUI.Parent = Player:WaitForChild("PlayerGui")
+
+--------------------------------------------------
+-- KEY UI
+--------------------------------------------------
+local KeyFrame = Instance.new("Frame", GUI)
+KeyFrame.Size = UDim2.fromOffset(350,180)
+KeyFrame.Position = UDim2.fromScale(0.5,0.5) - UDim2.fromOffset(175,90)
+KeyFrame.BackgroundColor3 = THEME.Background
+KeyFrame.Active = true
+KeyFrame.Draggable = true
+
+local KeyTitle = Instance.new("TextLabel", KeyFrame)
+KeyTitle.Size = UDim2.new(1,0,0,40)
+KeyTitle.Text = "DEMON KEY SYSTEM"
+KeyTitle.TextColor3 = THEME.Text
+KeyTitle.BackgroundTransparency = 1
+
+local KeyBox = Instance.new("TextBox", KeyFrame)
+KeyBox.Size = UDim2.fromOffset(280,35)
+KeyBox.Position = UDim2.fromOffset(35,65)
+KeyBox.PlaceholderText = "Enter Key"
+KeyBox.TextColor3 = THEME.Text
+KeyBox.BackgroundColor3 = THEME.Dark
+
+local SubmitKey = Instance.new("TextButton", KeyFrame)
+SubmitKey.Size = UDim2.fromOffset(200,35)
+SubmitKey.Position = UDim2.fromOffset(75,115)
+SubmitKey.Text = "Verify Key"
+SubmitKey.BackgroundColor3 = THEME.Light
+SubmitKey.TextColor3 = THEME.Text
+
+--------------------------------------------------
+-- MAIN UI
+--------------------------------------------------
+local Main = Instance.new("Frame", GUI)
+Main.Visible = false
+Main.Size = UDim2.fromOffset(700,420)
+Main.Position = UDim2.fromScale(0.5,0.5) - UDim2.fromOffset(350,210)
+Main.BackgroundColor3 = THEME.Background
+Main.Active = true
+Main.Draggable = true
+
+local Title = Instance.new("TextLabel", Main)
+Title.Size = UDim2.new(1,0,0,45)
+Title.Text = "Demon  |  made by justsscripts"
+Title.TextColor3 = THEME.Text
+Title.BackgroundTransparency = 1
+Title.TextSize = 18
+
+--------------------------------------------------
+-- SIDEBAR
+--------------------------------------------------
+local Sidebar = Instance.new("Frame", Main)
+Sidebar.Size = UDim2.fromOffset(170,375)
+Sidebar.Position = UDim2.fromOffset(0,45)
+Sidebar.BackgroundColor3 = THEME.Dark
+
+local Pages = Instance.new("Frame", Main)
+Pages.Size = UDim2.new(1,-170,1,-45)
+Pages.Position = UDim2.fromOffset(170,45)
+Pages.BackgroundTransparency = 1
+
+--------------------------------------------------
+-- KEY CHECK
+--------------------------------------------------
+local StoredKey = "DEMON-ACCESS"
+SubmitKey.MouseButton1Click:Connect(function()
+    if KeyBox.Text == StoredKey then
+        KeyFrame.Visible = false
+        Main.Visible = true
+    else
+        KeyBox.Text = "Invalid Key"
+    end
+end)
+
+--------------------------------------------------
+-- THEME SWITCHER FUNCTION
+--------------------------------------------------
+function Demon:ChangeTheme(Name)
+    if Themes[Name] then
+        THEME = Themes[Name]
+        Demon.CurrentTheme = Name
+
+        -- Update Main UI
+        Main.BackgroundColor3 = THEME.Background
+        Sidebar.BackgroundColor3 = THEME.Dark
+        Title.TextColor3 = THEME.Text
+        KeyFrame.BackgroundColor3 = THEME.Background
+        KeyTitle.TextColor3 = THEME.Text
+        KeyBox.BackgroundColor3 = THEME.Dark
+        KeyBox.TextColor3 = THEME.Text
+        SubmitKey.BackgroundColor3 = THEME.Light
+        SubmitKey.TextColor3 = THEME.Text
+
+        -- Update all children colors recursively
+        local function UpdateColors(frame)
+            for _,v in pairs(frame:GetChildren()) do
+                if v:IsA("Frame") or v:IsA("TextButton") or v:IsA("TextLabel") or v:IsA("TextBox") then
+                    if v.BackgroundColor3 == THEME.Background or v.BackgroundColor3 == THEME.Dark or v.BackgroundColor3 == THEME.Light then
+                        -- skip, already theme colors
+                    else
+                        v.BackgroundColor3 = THEME.Dark
+                    end
+                    if v:IsA("TextLabel") or v:IsA("TextButton") or v:IsA("TextBox") then
+                        v.TextColor3 = THEME.Text
+                    end
+                end
+                UpdateColors(v)
+            end
+        end
+        UpdateColors(Main)
+    end
+end
+
+--------------------------------------------------
+-- TAB SYSTEM (same as before)
+--------------------------------------------------
+function Demon:CreateTab(Name)
+    local TabBtn = Instance.new("TextButton", Sidebar)
+    TabBtn.Size = UDim2.new(1,0,0,40)
+    TabBtn.Text = Name
+    TabBtn.TextColor3 = THEME.Text
+    TabBtn.BackgroundColor3 = THEME.Light
+
+    local Page = Instance.new("ScrollingFrame", Pages)
+    Page.Size = UDim2.new(1,0,1,0)
+    Page.CanvasSize = UDim2.new(0,0,0,0)
+    Page.ScrollBarImageTransparency = 1
+    Page.Visible = false
+
+    TabBtn.MouseButton1Click:Connect(function()
+        for _,v in pairs(Pages:GetChildren()) do
+            if v:IsA("ScrollingFrame") then
+                v.Visible = false
+            end
+        end
+        Page.Visible = true
+    end)
+
+    local Layout = Instance.new("UIListLayout", Page)
+    Layout.Padding = UDim.new(0,10)
+
+    local Tab = {}
+
+    function Tab:CreateSection(Text)
+        local Label = Instance.new("TextLabel", Page)
+        Label.Text = Text
+        Label.Size = UDim2.new(1,-10,0,30)
+        Label.TextColor3 = THEME.Text
+        Label.BackgroundTransparency = 1
+    end
+
+    function Tab:CreateToggle(Name, Default, Callback)
+        local ToggleFrame = Instance.new("Frame", Page)
+        ToggleFrame.Size = UDim2.new(1,-10,0,45)
+        ToggleFrame.BackgroundColor3 = THEME.Dark
+
+        local Text = Instance.new("TextLabel", ToggleFrame)
+        Text.Text = Name
+        Text.TextColor3 = THEME.Text
+        Text.Size = UDim2.new(1,-60,1,0)
+        Text.BackgroundTransparency = 1
+
+        local Switch = Instance.new("Frame", ToggleFrame)
+        Switch.Size = UDim2.fromOffset(40,20)
+        Switch.Position = UDim2.fromScale(1,0.5) - UDim2.fromOffset(50,10)
+        Switch.BackgroundColor3 = THEME.Light
+
+        local Knob = Instance.new("Frame", Switch)
+        Knob.Size = UDim2.fromOffset(18,18)
+        Knob.Position = Default and UDim2.fromOffset(20,1) or UDim2.fromOffset(1,1)
+        Knob.BackgroundColor3 = THEME.Text
+
+        local State = Default
+        Demon.Flags[Name] = State
+
+        ToggleFrame.InputBegan:Connect(function(input)
+            if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+                State = not State
+                Demon.Flags[Name] = State
+                TweenService:Create(Knob,TweenInfo.new(0.2),{
+                    Position = State and UDim2.fromOffset(20,1) or UDim2.fromOffset(1,1)
+                }):Play()
+                Callback(State)
+            end
+        end)
+    end
+
+    return Tab
+end
+
+return Demon
