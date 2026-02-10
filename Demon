@@ -1,7 +1,6 @@
---// DemonUI V2
---// Inspired by Rayfield
---// PC + Mobile Supported
---// Demon / Modern Theme
+--// DemonUI Fully Functional Rayfield-Style
+--// Author: Custom Demon
+--// PC + Mobile
 
 local DemonUI = {}
 DemonUI.__index = DemonUI
@@ -9,29 +8,29 @@ DemonUI.__index = DemonUI
 --// Services
 local UIS = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
+local CoreGui = game:GetService("CoreGui")
 local HttpService = game:GetService("HttpService")
 
---// Themes (7)
+--// Neon Theme Colors (7)
 local Themes = {
-    DemonRed = Color3.fromRGB(255, 30, 30),
-    HellPurple = Color3.fromRGB(170, 0, 255),
-    AbyssBlue = Color3.fromRGB(0, 160, 255),
-    BloodPink = Color3.fromRGB(255, 0, 140),
-    ToxicGreen = Color3.fromRGB(90, 255, 90),
-    InfernoOrange = Color3.fromRGB(255, 120, 0),
-    GhostWhite = Color3.fromRGB(240, 240, 240)
+    Color3.fromRGB(255, 30, 30),   -- Demon Red
+    Color3.fromRGB(170, 0, 255),   -- Hell Purple
+    Color3.fromRGB(0, 160, 255),   -- Abyss Blue
+    Color3.fromRGB(255, 0, 140),   -- Blood Pink
+    Color3.fromRGB(90, 255, 90),   -- Toxic Green
+    Color3.fromRGB(255, 120, 0),   -- Inferno Orange
+    Color3.fromRGB(240, 240, 240)  -- Ghost White
 }
-
-local CurrentTheme = Themes.DemonRed
+local CurrentTheme = Themes[1]
 
 --// Utils
-local function Tween(obj, time, props)
-    TweenService:Create(obj, TweenInfo.new(time, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), props):Play()
+local function Tween(obj,time,props)
+    TweenService:Create(obj,TweenInfo.new(time,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),props):Play()
 end
 
 --// Create Window
 function DemonUI:CreateWindow(cfg)
-    local self = setmetatable({}, DemonUI)
+    local self = setmetatable({},DemonUI)
 
     self.Title = cfg.Title or "DemonUI"
     self.Description = cfg.Description or "Born from Hell"
@@ -39,35 +38,34 @@ function DemonUI:CreateWindow(cfg)
     self.Key = cfg.Key or "DEMON"
 
     --// GUI
-    local GUI = Instance.new("ScreenGui", game.CoreGui)
+    local GUI = Instance.new("ScreenGui")
     GUI.Name = "DemonUI"
+    GUI.Parent = CoreGui
     GUI.ResetOnSpawn = false
 
-    --// Main
-    local Main = Instance.new("Frame", GUI)
-    Main.Size = UDim2.fromOffset(520, 380)
-    Main.Position = UDim2.fromScale(0.5, 0.5)
-    Main.AnchorPoint = Vector2.new(0.5, 0.5)
-    Main.BackgroundColor3 = Color3.fromRGB(5,5,5)
+    --// Main Window
+    local Main = Instance.new("Frame",GUI)
+    Main.Size = UDim2.fromOffset(520,400)
+    Main.Position = UDim2.fromScale(0.5,0.5)
+    Main.AnchorPoint = Vector2.new(0.5,0.5)
+    Main.BackgroundColor3 = Color3.fromRGB(8,8,8)
     Main.BorderSizePixel = 0
     Main.Active = true
     Main.Draggable = true
+    Instance.new("UICorner",Main).CornerRadius = UDim.new(0,12)
 
-    --// Corner
-    Instance.new("UICorner", Main).CornerRadius = UDim.new(0,14)
-
-    --// Glow
+    --// Glow border
     local Stroke = Instance.new("UIStroke", Main)
     Stroke.Color = CurrentTheme
-    Stroke.Thickness = 1.5
+    Stroke.Thickness = 2
     Stroke.Transparency = 0.2
 
     --// Topbar
-    local Top = Instance.new("Frame", Main)
+    local Top = Instance.new("Frame",Main)
     Top.Size = UDim2.new(1,0,0,60)
     Top.BackgroundTransparency = 1
 
-    local Title = Instance.new("TextLabel", Top)
+    local Title = Instance.new("TextLabel",Top)
     Title.Text = self.Title
     Title.Font = Enum.Font.GothamBlack
     Title.TextSize = 24
@@ -75,9 +73,9 @@ function DemonUI:CreateWindow(cfg)
     Title.BackgroundTransparency = 1
     Title.Position = UDim2.fromOffset(16,6)
     Title.Size = UDim2.new(1,-20,0,28)
-    Title.TextXAlignment = Left
+    Title.TextXAlignment = Enum.TextXAlignment.Left
 
-    local Desc = Instance.new("TextLabel", Top)
+    local Desc = Instance.new("TextLabel",Top)
     Desc.Text = self.Description
     Desc.Font = Enum.Font.Gotham
     Desc.TextSize = 14
@@ -85,41 +83,42 @@ function DemonUI:CreateWindow(cfg)
     Desc.BackgroundTransparency = 1
     Desc.Position = UDim2.fromOffset(16,32)
     Desc.Size = UDim2.new(1,-20,0,22)
-    Desc.TextXAlignment = Left
+    Desc.TextXAlignment = Enum.TextXAlignment.Left
 
-    --// Tabs
-    local TabHolder = Instance.new("Frame", Main)
+    --// Tabs holder
+    local TabHolder = Instance.new("Frame",Main)
     TabHolder.Position = UDim2.fromOffset(10,70)
-    TabHolder.Size = UDim2.fromOffset(130,300)
+    TabHolder.Size = UDim2.fromOffset(140,320)
     TabHolder.BackgroundTransparency = 1
 
-    local TabLayout = Instance.new("UIListLayout", TabHolder)
+    local TabLayout = Instance.new("UIListLayout",TabHolder)
     TabLayout.Padding = UDim.new(0,6)
 
-    --// Pages
-    local Pages = Instance.new("Frame", Main)
-    Pages.Position = UDim2.fromOffset(150,70)
-    Pages.Size = UDim2.fromOffset(360,300)
+    --// Pages holder
+    local Pages = Instance.new("Frame",Main)
+    Pages.Position = UDim2.fromOffset(160,70)
+    Pages.Size = UDim2.fromOffset(350,320)
     Pages.BackgroundTransparency = 1
+    Pages.ClipsDescendants = true
 
     self.Pages = Pages
     self.TabHolder = TabHolder
     self.CurrentPage = nil
 
-    --// Notification
+    --// Notifications
     function self:Notify(txt)
         local N = Instance.new("TextLabel", GUI)
         N.Size = UDim2.fromOffset(300,40)
         N.Position = UDim2.fromScale(0.5,0.9)
         N.AnchorPoint = Vector2.new(0.5,0.5)
-        N.BackgroundColor3 = Color3.fromRGB(10,10,10)
+        N.BackgroundColor3 = Color3.fromRGB(15,15,15)
         N.Text = txt
         N.TextColor3 = CurrentTheme
         N.Font = Enum.Font.GothamBold
         N.TextSize = 16
         N.BackgroundTransparency = 0
-        Instance.new("UICorner", N).CornerRadius = UDim.new(0,10)
-        Tween(N,0.3,{BackgroundTransparency = 0})
+        Instance.new("UICorner",N).CornerRadius = UDim.new(0,10)
+        Tween(N,0.3,{BackgroundTransparency=0})
         task.delay(2,function()
             Tween(N,0.3,{TextTransparency=1,BackgroundTransparency=1})
             task.wait(0.4)
@@ -128,23 +127,24 @@ function DemonUI:CreateWindow(cfg)
     end
 
     --// Create Tab
-    function self:CreateTab(name, icon)
-        local Tab = Instance.new("TextButton", TabHolder)
-        Tab.Size = UDim2.fromOffset(130,40)
+    function self:CreateTab(name)
+        local Tab = Instance.new("TextButton",TabHolder)
+        Tab.Size = UDim2.fromOffset(140,40)
         Tab.Text = name
         Tab.Font = Enum.Font.GothamBold
         Tab.TextSize = 16
         Tab.TextColor3 = Color3.fromRGB(180,180,180)
-        Tab.BackgroundColor3 = Color3.fromRGB(10,10,10)
-        Instance.new("UICorner", Tab).CornerRadius = UDim.new(0,10)
+        Tab.BackgroundColor3 = Color3.fromRGB(15,15,15)
+        Instance.new("UICorner",Tab).CornerRadius = UDim.new(0,10)
 
-        local Page = Instance.new("ScrollingFrame", Pages)
-        Page.Size = UDim2.fromScale(1,1)
+        local Page = Instance.new("ScrollingFrame",Pages)
+        Page.Size = UDim2.new(1,0,1,0)
         Page.CanvasSize = UDim2.new(0,0,0,0)
         Page.ScrollBarImageTransparency = 1
         Page.Visible = false
+        Page.ClipsDescendants = true
 
-        local Layout = Instance.new("UIListLayout", Page)
+        local Layout = Instance.new("UIListLayout",Page)
         Layout.Padding = UDim.new(0,8)
 
         Tab.MouseButton1Click:Connect(function()
@@ -165,65 +165,176 @@ function DemonUI:CreateWindow(cfg)
 
         -- Button
         function TabAPI:Button(txt, cb)
-            local B = Instance.new("TextButton", Page)
-            B.Size = UDim2.fromOffset(340,40)
+            local B = Instance.new("TextButton",Page)
+            B.Size = UDim2.fromOffset(330,40)
             B.Text = txt
             B.Font = Enum.Font.GothamBold
             B.TextSize = 16
             B.TextColor3 = CurrentTheme
-            B.BackgroundColor3 = Color3.fromRGB(15,15,15)
-            Instance.new("UICorner", B).CornerRadius = UDim.new(0,10)
+            B.BackgroundColor3 = Color3.fromRGB(20,20,20)
+            Instance.new("UICorner",B).CornerRadius = UDim.new(0,10)
             B.MouseButton1Click:Connect(cb)
         end
 
         -- Toggle
         function TabAPI:Toggle(txt, default, cb)
-            local Toggled = default or false
-            local B = Instance.new("TextButton", Page)
-            B.Size = UDim2.fromOffset(340,40)
-            B.Text = txt.." : "..(Toggled and "ON" or "OFF")
+            local toggled = default or false
+            local B = Instance.new("TextButton",Page)
+            B.Size = UDim2.fromOffset(330,40)
+            B.Text = txt.." : "..(toggled and "ON" or "OFF")
             B.Font = Enum.Font.GothamBold
             B.TextSize = 16
-            B.TextColor3 = Toggled and CurrentTheme or Color3.fromRGB(180,180,180)
-            B.BackgroundColor3 = Color3.fromRGB(15,15,15)
-            Instance.new("UICorner", B).CornerRadius = UDim.new(0,10)
+            B.TextColor3 = toggled and CurrentTheme or Color3.fromRGB(180,180,180)
+            B.BackgroundColor3 = Color3.fromRGB(20,20,20)
+            Instance.new("UICorner",B).CornerRadius = UDim.new(0,10)
 
             B.MouseButton1Click:Connect(function()
-                Toggled = not Toggled
-                B.Text = txt.." : "..(Toggled and "ON" or "OFF")
-                B.TextColor3 = Toggled and CurrentTheme or Color3.fromRGB(180,180,180)
-                cb(Toggled)
+                toggled = not toggled
+                B.Text = txt.." : "..(toggled and "ON" or "OFF")
+                B.TextColor3 = toggled and CurrentTheme or Color3.fromRGB(180,180,180)
+                cb(toggled)
             end)
         end
 
         -- Slider
         function TabAPI:Slider(txt,min,max,def,cb)
-            local Val = def or min
-            local F = Instance.new("Frame", Page)
-            F.Size = UDim2.fromOffset(340,50)
-            F.BackgroundColor3 = Color3.fromRGB(15,15,15)
-            Instance.new("UICorner", F).CornerRadius = UDim.new(0,10)
+            local val = def or min
+            local F = Instance.new("Frame",Page)
+            F.Size = UDim2.fromOffset(330,50)
+            F.BackgroundColor3 = Color3.fromRGB(20,20,20)
+            Instance.new("UICorner",F).CornerRadius = UDim.new(0,10)
 
-            local L = Instance.new("TextLabel", F)
-            L.Text = txt.." : "..Val
+            local L = Instance.new("TextLabel",F)
+            L.Size = UDim2.new(1,0,0,20)
+            L.Position = UDim2.fromOffset(5,5)
+            L.BackgroundTransparency = 1
+            L.Text = txt.." : "..val
             L.Font = Enum.Font.GothamBold
             L.TextSize = 14
             L.TextColor3 = CurrentTheme
-            L.BackgroundTransparency = 1
-            L.Size = UDim2.new(1,0,0,20)
+            L.TextXAlignment = Enum.TextXAlignment.Left
 
-            F.InputBegan:Connect(function(i)
-                if i.UserInputType == Enum.UserInputType.MouseButton1 then
-                    local X = i.Position.X - F.AbsolutePosition.X
-                    local P = math.clamp(X/F.AbsoluteSize.X,0,1)
-                    Val = math.floor(min + (max-min)*P)
-                    L.Text = txt.." : "..Val
-                    cb(Val)
+            local SliderBar = Instance.new("Frame",F)
+            SliderBar.Position = UDim2.fromOffset(5,30)
+            SliderBar.Size = UDim2.new(1,-10,0,10)
+            SliderBar.BackgroundColor3 = Color3.fromRGB(50,50,50)
+            Instance.new("UICorner",SliderBar).CornerRadius = UDim.new(0,5)
+
+            local Fill = Instance.new("Frame",SliderBar)
+            Fill.Size = UDim2.new((val-min)/(max-min),0,1,0)
+            Fill.BackgroundColor3 = CurrentTheme
+            Instance.new("UICorner",Fill).CornerRadius = UDim.new(0,5)
+
+            local dragging = false
+            SliderBar.InputBegan:Connect(function(input)
+                if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                    dragging = true
+                end
+            end)
+            UIS.InputEnded:Connect(function(input)
+                if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                    dragging = false
+                end
+            end)
+            UIS.InputChanged:Connect(function(input)
+                if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+                    local x = math.clamp(input.Position.X - SliderBar.AbsolutePosition.X,0,SliderBar.AbsoluteSize.X)
+                    val = math.floor(min + (max-min)*(x/SliderBar.AbsoluteSize.X))
+                    Fill.Size = UDim2.new((val-min)/(max-min),0,1,0)
+                    L.Text = txt.." : "..val
+                    cb(val)
+                end
+            end)
+        end
+
+        -- Dropdown
+        function TabAPI:Dropdown(txt, options, cb)
+            local open = false
+            local Frame = Instance.new("Frame",Page)
+            Frame.Size = UDim2.fromOffset(330,40)
+            Frame.BackgroundColor3 = Color3.fromRGB(20,20,20)
+            Instance.new("UICorner",Frame).CornerRadius = UDim.new(0,10)
+
+            local Label = Instance.new("TextLabel",Frame)
+            Label.Text = txt
+            Label.Size = UDim2.new(1,0,1,0)
+            Label.BackgroundTransparency = 1
+            Label.TextColor3 = CurrentTheme
+            Label.Font = Enum.Font.GothamBold
+            Label.TextSize = 14
+            Label.TextXAlignment = Enum.TextXAlignment.Left
+            Label.Position = UDim2.fromOffset(5,0)
+
+            local Btn = Instance.new("TextButton",Frame)
+            Btn.Size = UDim2.new(1,0,1,0)
+            Btn.BackgroundTransparency = 1
+            Btn.Text = ""
+            Btn.MouseButton1Click:Connect(function()
+                if open then
+                    for _,v in pairs(Frame:GetChildren()) do
+                        if v:IsA("TextButton") and v ~= Btn then v:Destroy() end
+                    end
+                    open = false
+                else
+                    for i,opt in pairs(options) do
+                        local Option = Instance.new("TextButton",Frame)
+                        Option.Text = opt
+                        Option.Font = Enum.Font.Gotham
+                        Option.TextSize = 14
+                        Option.BackgroundColor3 = Color3.fromRGB(30,30,30)
+                        Option.Position = UDim2.fromOffset(0,40*i)
+                        Option.Size = UDim2.new(1,0,0,30)
+                        Option.TextColor3 = CurrentTheme
+                        Instance.new("UICorner",Option).CornerRadius = UDim.new(0,8)
+                        Option.MouseButton1Click:Connect(function()
+                            Label.Text = txt.." : "..opt
+                            cb(opt)
+                            for _,v in pairs(Frame:GetChildren()) do
+                                if v:IsA("TextButton") and v ~= Btn then v:Destroy() end
+                            end
+                            open = false
+                        end)
+                    end
+                    open = true
                 end
             end)
         end
 
         return TabAPI
+    end
+
+    --// Key System
+    if self.KeySystem then
+        local KeyFrame = Instance.new("Frame", GUI)
+        KeyFrame.Size = UDim2.fromOffset(300,160)
+        KeyFrame.Position = UDim2.fromScale(0.5,0.5)
+        KeyFrame.AnchorPoint = Vector2.new(0.5,0.5)
+        KeyFrame.BackgroundColor3 = Color3.fromRGB(10,10,10)
+        Instance.new("UICorner",KeyFrame).CornerRadius = UDim.new(0,12)
+
+        local Box = Instance.new("TextBox",KeyFrame)
+        Box.Size = UDim2.fromOffset(260,40)
+        Box.Position = UDim2.fromOffset(20,30)
+        Box.PlaceholderText = "Enter Key"
+        Box.TextColor3 = CurrentTheme
+        Box.BackgroundColor3 = Color3.fromRGB(20,20,20)
+        Instance.new("UICorner",Box).CornerRadius = UDim.new(0,10)
+
+        local Check = Instance.new("TextButton",KeyFrame)
+        Check.Size = UDim2.fromOffset(260,40)
+        Check.Position = UDim2.fromOffset(20,90)
+        Check.Text = "Submit"
+        Check.TextColor3 = CurrentTheme
+        Check.BackgroundColor3 = Color3.fromRGB(20,20,20)
+        Instance.new("UICorner",Check).CornerRadius = UDim.new(0,10)
+
+        Check.MouseButton1Click:Connect(function()
+            if Box.Text == self.Key then
+                KeyFrame:Destroy()
+            else
+                Box.Text = "Wrong Key"
+            end
+        end)
     end
 
     return self
