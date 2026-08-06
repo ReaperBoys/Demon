@@ -1,0 +1,16 @@
+local target = CFrame.new(
+    -6510.71289, 266.467041, -15756.5098,
+    0, 0, 1,
+    0, 1, 0,
+    -1, 0, 0
+)
+
+while task.wait(0.1) do
+    local character = game.Players.LocalPlayer.Character
+    if character then
+        local hrp = character:FindFirstChild("HumanoidRootPart")
+        if hrp then
+            hrp.CFrame = target
+        end
+    end
+end
