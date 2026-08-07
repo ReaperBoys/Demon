@@ -1,0 +1,7 @@
+while wait() do
+local args = {
+    [1] = workspace.Dummy.Starter.Hitbox
+}
+
+game:GetService("ReplicatedStorage").Remotes.DamageBlock:InvokeServer(unpack(args))
+end
