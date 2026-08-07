@@ -1,0 +1,68 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+    Name = "+1 Speed Keyboard Escape | Underwater",
+    LoadingTitle = "justsscripts",
+    LoadingSubtitle = "Hub",
+    ConfigurationSaving = {
+        Enabled = false
+    }
+})
+
+local Tab = Window:CreateTab("Main", 4483362458)
+
+-- Walking Speed Toggle
+local SpeedEnabled = false
+
+Tab:CreateToggle({
+    Name = "Speed",
+    CurrentValue = false,
+    Flag = "WalkingSpeed",
+    Callback = function(Value)
+        SpeedEnabled = Value
+
+        if Value then
+            task.spawn(function()
+                while SpeedEnabled do
+                    game:GetService("ReplicatedStorage").Remotes.UpdateSpeed:FireServer("Walking")
+                    task.wait()
+                end
+            end)
+        end
+    end,
+})
+
+
+-- Constant Teleport Toggle
+local TeleportEnabled = false
+
+local TargetCFrame = CFrame.new(
+    -9488.71777, 64.0392151, 2030.39746,
+    -0.999998569, -0.00172643899, -1.56481281e-06,
+    -0.00172643899, 0.999996841, 0.00181276083,
+    -1.56481281e-06, 0.00181276083, -0.99999845
+)
+
+Tab:CreateToggle({
+    Name = "Wins Teleport",
+    CurrentValue = false,
+    Flag = "ConstantTeleport",
+    Callback = function(Value)
+        TeleportEnabled = Value
+
+        if Value then
+            task.spawn(function()
+                while TeleportEnabled do
+                    local Character = game.Players.LocalPlayer.Character
+                    local Root = Character and Character:FindFirstChild("HumanoidRootPart")
+
+                    if Root then
+                        Root.CFrame = TargetCFrame
+                    end
+
+                    task.wait()
+                end
+            end)
+        end
+    end,
+})
