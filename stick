@@ -1,0 +1,27 @@
+local p=game.Players.LocalPlayer
+local rs=game:GetService("RunService")
+local stick
+
+p.Chatted:Connect(function(m)
+	local u=m:match("^!stick%s+@?(.+)")
+	if u then
+		local t=game.Players:FindFirstChild(u)
+		if t then
+			stick=true
+			rs:BindToRenderStep("Stick",1,function()
+				local c=p.Character
+				local tc=t.Character
+				if c and tc then
+					local hrp=c:FindFirstChild("HumanoidRootPart")
+					local thrp=tc:FindFirstChild("HumanoidRootPart")
+					if hrp and thrp then
+						hrp.CFrame=thrp.CFrame*CFrame.new(0,0,2)
+					end
+				end
+			end)
+		end
+	elseif m:lower()=="!unstick" then
+		stick=false
+		rs:UnbindFromRenderStep("Stick")
+	end
+end)
