@@ -1,0 +1,2957 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local Orbit = {
+	Orbit = Instance.new("ScreenGui"),
+	MainFrame = Instance.new("Frame"),
+	UICorner = Instance.new("UICorner"),
+	TopBar = Instance.new("Frame"),
+	Title = Instance.new("TextLabel"),
+	UIPadding = Instance.new("UIPadding"),
+	UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint"),
+	SearchBox = Instance.new("TextBox"),
+	UIPadding_2 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_3 = Instance.new("UIAspectRatioConstraint"),
+	ScrollingFrame = Instance.new("ScrollingFrame"),
+	SpeedFrame = Instance.new("Frame"),
+	UICorner_2 = Instance.new("UICorner"),
+	Title_2 = Instance.new("TextLabel"),
+	UIPadding_3 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_4 = Instance.new("UIAspectRatioConstraint"),
+	Speed = Instance.new("TextBox"),
+	UICorner_3 = Instance.new("UICorner"),
+	UIPadding_4 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_5 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_6 = Instance.new("UIAspectRatioConstraint"),
+	UIListLayout = Instance.new("UIListLayout"),
+	JumpFrame = Instance.new("Frame"),
+	UICorner_4 = Instance.new("UICorner"),
+	Title_3 = Instance.new("TextLabel"),
+	UIPadding_5 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_7 = Instance.new("UIAspectRatioConstraint"),
+	Jump = Instance.new("TextBox"),
+	UICorner_5 = Instance.new("UICorner"),
+	UIPadding_6 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_8 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_9 = Instance.new("UIAspectRatioConstraint"),
+	GravityFrame = Instance.new("Frame"),
+	UICorner_6 = Instance.new("UICorner"),
+	Title_4 = Instance.new("TextLabel"),
+	UIPadding_7 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_10 = Instance.new("UIAspectRatioConstraint"),
+	Gravity = Instance.new("TextBox"),
+	UICorner_7 = Instance.new("UICorner"),
+	UIPadding_8 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_11 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_12 = Instance.new("UIAspectRatioConstraint"),
+	HipheightFrame = Instance.new("Frame"),
+	UICorner_8 = Instance.new("UICorner"),
+	Title_5 = Instance.new("TextLabel"),
+	UIPadding_9 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_13 = Instance.new("UIAspectRatioConstraint"),
+	Hipheight = Instance.new("TextBox"),
+	UICorner_9 = Instance.new("UICorner"),
+	UIPadding_10 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_14 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_15 = Instance.new("UIAspectRatioConstraint"),
+	SpinFrame = Instance.new("Frame"),
+	UICorner_10 = Instance.new("UICorner"),
+	Title_6 = Instance.new("TextLabel"),
+	UIPadding_11 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_16 = Instance.new("UIAspectRatioConstraint"),
+	Spin = Instance.new("TextBox"),
+	UICorner_11 = Instance.new("UICorner"),
+	UIPadding_12 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_17 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_18 = Instance.new("UIAspectRatioConstraint"),
+	FlyFrame = Instance.new("Frame"),
+	UICorner_12 = Instance.new("UICorner"),
+	Title_7 = Instance.new("TextLabel"),
+	UIPadding_13 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_19 = Instance.new("UIAspectRatioConstraint"),
+	ON = Instance.new("TextButton"),
+	UICorner_13 = Instance.new("UICorner"),
+	UIPadding_14 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_20 = Instance.new("UIAspectRatioConstraint"),
+	OFF = Instance.new("TextButton"),
+	UICorner_14 = Instance.new("UICorner"),
+	UIPadding_15 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_21 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_22 = Instance.new("UIAspectRatioConstraint"),
+	NoClipFrame = Instance.new("Frame"),
+	UICorner_15 = Instance.new("UICorner"),
+	Title_8 = Instance.new("TextLabel"),
+	UIPadding_16 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_23 = Instance.new("UIAspectRatioConstraint"),
+	ON_2 = Instance.new("TextButton"),
+	UICorner_16 = Instance.new("UICorner"),
+	UIPadding_17 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_24 = Instance.new("UIAspectRatioConstraint"),
+	OFF_2 = Instance.new("TextButton"),
+	UICorner_17 = Instance.new("UICorner"),
+	UIPadding_18 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_25 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_26 = Instance.new("UIAspectRatioConstraint"),
+	InvisibleFrame = Instance.new("Frame"),
+	UICorner_18 = Instance.new("UICorner"),
+	Title_9 = Instance.new("TextLabel"),
+	UIPadding_19 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_27 = Instance.new("UIAspectRatioConstraint"),
+	ON_3 = Instance.new("TextButton"),
+	UICorner_19 = Instance.new("UICorner"),
+	UIPadding_20 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_28 = Instance.new("UIAspectRatioConstraint"),
+	OFF_3 = Instance.new("TextButton"),
+	UICorner_20 = Instance.new("UICorner"),
+	UIPadding_21 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_29 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_30 = Instance.new("UIAspectRatioConstraint"),
+	DanceFrame = Instance.new("Frame"),
+	UICorner_21 = Instance.new("UICorner"),
+	Title_10 = Instance.new("TextLabel"),
+	UIPadding_22 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_31 = Instance.new("UIAspectRatioConstraint"),
+	ON_4 = Instance.new("TextButton"),
+	UICorner_22 = Instance.new("UICorner"),
+	UIPadding_23 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_32 = Instance.new("UIAspectRatioConstraint"),
+	OFF_4 = Instance.new("TextButton"),
+	UICorner_23 = Instance.new("UICorner"),
+	UIPadding_24 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_33 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_34 = Instance.new("UIAspectRatioConstraint"),
+	WaveFrame = Instance.new("Frame"),
+	UICorner_24 = Instance.new("UICorner"),
+	Title_11 = Instance.new("TextLabel"),
+	UIPadding_25 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_35 = Instance.new("UIAspectRatioConstraint"),
+	ON_5 = Instance.new("TextButton"),
+	UICorner_25 = Instance.new("UICorner"),
+	UIPadding_26 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_36 = Instance.new("UIAspectRatioConstraint"),
+	OFF_5 = Instance.new("TextButton"),
+	UICorner_26 = Instance.new("UICorner"),
+	UIPadding_27 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_37 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_38 = Instance.new("UIAspectRatioConstraint"),
+	PrintFrame = Instance.new("Frame"),
+	UICorner_27 = Instance.new("UICorner"),
+	Title_12 = Instance.new("TextLabel"),
+	UIPadding_28 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_39 = Instance.new("UIAspectRatioConstraint"),
+	Print = Instance.new("TextButton"),
+	UICorner_28 = Instance.new("UICorner"),
+	UIPadding_29 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_40 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_41 = Instance.new("UIAspectRatioConstraint"),
+	RemoteSpyFrame = Instance.new("Frame"),
+	UICorner_29 = Instance.new("UICorner"),
+	Title_13 = Instance.new("TextLabel"),
+	UIPadding_30 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_42 = Instance.new("UIAspectRatioConstraint"),
+	RemoteSpy = Instance.new("TextButton"),
+	UICorner_30 = Instance.new("UICorner"),
+	UIPadding_31 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_43 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_44 = Instance.new("UIAspectRatioConstraint"),
+	TurtleSpyFrame = Instance.new("Frame"),
+	UICorner_31 = Instance.new("UICorner"),
+	Title_14 = Instance.new("TextLabel"),
+	UIPadding_32 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_45 = Instance.new("UIAspectRatioConstraint"),
+	TurtleSpy = Instance.new("TextButton"),
+	UICorner_32 = Instance.new("UICorner"),
+	UIPadding_33 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_46 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_47 = Instance.new("UIAspectRatioConstraint"),
+	RejoinFrame = Instance.new("Frame"),
+	UICorner_33 = Instance.new("UICorner"),
+	Title_15 = Instance.new("TextLabel"),
+	UIPadding_34 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_48 = Instance.new("UIAspectRatioConstraint"),
+	Rejoin = Instance.new("TextButton"),
+	UICorner_34 = Instance.new("UICorner"),
+	UIPadding_35 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_49 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_50 = Instance.new("UIAspectRatioConstraint"),
+	DayFrame = Instance.new("Frame"),
+	UICorner_35 = Instance.new("UICorner"),
+	Title_16 = Instance.new("TextLabel"),
+	UIPadding_36 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_51 = Instance.new("UIAspectRatioConstraint"),
+	Day = Instance.new("TextButton"),
+	UICorner_36 = Instance.new("UICorner"),
+	UIPadding_37 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_52 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_53 = Instance.new("UIAspectRatioConstraint"),
+	NightFrame = Instance.new("Frame"),
+	UICorner_37 = Instance.new("UICorner"),
+	Title_17 = Instance.new("TextLabel"),
+	UIPadding_38 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_54 = Instance.new("UIAspectRatioConstraint"),
+	Night = Instance.new("TextButton"),
+	UICorner_38 = Instance.new("UICorner"),
+	UIPadding_39 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_55 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_56 = Instance.new("UIAspectRatioConstraint"),
+	RainFrame = Instance.new("Frame"),
+	UICorner_39 = Instance.new("UICorner"),
+	Title_18 = Instance.new("TextLabel"),
+	UIPadding_40 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_57 = Instance.new("UIAspectRatioConstraint"),
+	Rain = Instance.new("TextButton"),
+	UICorner_40 = Instance.new("UICorner"),
+	UIPadding_41 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_58 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_59 = Instance.new("UIAspectRatioConstraint"),
+	RemoveRainFrame = Instance.new("Frame"),
+	UICorner_41 = Instance.new("UICorner"),
+	Title_19 = Instance.new("TextLabel"),
+	UIPadding_42 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_60 = Instance.new("UIAspectRatioConstraint"),
+	RemoveRain = Instance.new("TextButton"),
+	UICorner_42 = Instance.new("UICorner"),
+	UIPadding_43 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_61 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_62 = Instance.new("UIAspectRatioConstraint"),
+	SitFrame = Instance.new("Frame"),
+	UICorner_43 = Instance.new("UICorner"),
+	Title_20 = Instance.new("TextLabel"),
+	UIPadding_44 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_63 = Instance.new("UIAspectRatioConstraint"),
+	Sit = Instance.new("TextButton"),
+	UICorner_44 = Instance.new("UICorner"),
+	UIPadding_45 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_64 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_65 = Instance.new("UIAspectRatioConstraint"),
+	InfiniteJumpFrame = Instance.new("Frame"),
+	UICorner_45 = Instance.new("UICorner"),
+	Title_21 = Instance.new("TextLabel"),
+	UIPadding_46 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_66 = Instance.new("UIAspectRatioConstraint"),
+	ON_6 = Instance.new("TextButton"),
+	UICorner_46 = Instance.new("UICorner"),
+	UIPadding_47 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_67 = Instance.new("UIAspectRatioConstraint"),
+	OFF_6 = Instance.new("TextButton"),
+	UICorner_47 = Instance.new("UICorner"),
+	UIPadding_48 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_68 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_69 = Instance.new("UIAspectRatioConstraint"),
+	FloatFrame = Instance.new("Frame"),
+	UICorner_48 = Instance.new("UICorner"),
+	Title_22 = Instance.new("TextLabel"),
+	UIPadding_49 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_70 = Instance.new("UIAspectRatioConstraint"),
+	ON_7 = Instance.new("TextButton"),
+	UICorner_49 = Instance.new("UICorner"),
+	UIPadding_50 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_71 = Instance.new("UIAspectRatioConstraint"),
+	OFF_7 = Instance.new("TextButton"),
+	UICorner_50 = Instance.new("UICorner"),
+	UIPadding_51 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_72 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_73 = Instance.new("UIAspectRatioConstraint"),
+	HeadlessFrame = Instance.new("Frame"),
+	UICorner_51 = Instance.new("UICorner"),
+	Title_23 = Instance.new("TextLabel"),
+	UIPadding_52 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_74 = Instance.new("UIAspectRatioConstraint"),
+	Headless = Instance.new("TextButton"),
+	UICorner_52 = Instance.new("UICorner"),
+	UIPadding_53 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_75 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_76 = Instance.new("UIAspectRatioConstraint"),
+	KorbloxFrame = Instance.new("Frame"),
+	UICorner_53 = Instance.new("UICorner"),
+	Title_24 = Instance.new("TextLabel"),
+	UIPadding_54 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_77 = Instance.new("UIAspectRatioConstraint"),
+	Korblox = Instance.new("TextButton"),
+	UICorner_54 = Instance.new("UICorner"),
+	UIPadding_55 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_78 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_79 = Instance.new("UIAspectRatioConstraint"),
+	MoonwalkFrame = Instance.new("Frame"),
+	UICorner_55 = Instance.new("UICorner"),
+	Title_25 = Instance.new("TextLabel"),
+	UIPadding_56 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_80 = Instance.new("UIAspectRatioConstraint"),
+	ON_8 = Instance.new("TextButton"),
+	UICorner_56 = Instance.new("UICorner"),
+	UIPadding_57 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_81 = Instance.new("UIAspectRatioConstraint"),
+	OFF_8 = Instance.new("TextButton"),
+	UICorner_57 = Instance.new("UICorner"),
+	UIPadding_58 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_82 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_83 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_84 = Instance.new("UIAspectRatioConstraint"),
+	BenchPressFrame = Instance.new("Frame"),
+	UICorner_58 = Instance.new("UICorner"),
+	Title_26 = Instance.new("TextLabel"),
+	UIPadding_59 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_85 = Instance.new("UIAspectRatioConstraint"),
+	BenchPress = Instance.new("TextButton"),
+	UICorner_59 = Instance.new("UICorner"),
+	UIPadding_60 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_86 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_87 = Instance.new("UIAspectRatioConstraint"),
+	PunchingBagFrame = Instance.new("Frame"),
+	UICorner_60 = Instance.new("UICorner"),
+	Title_27 = Instance.new("TextLabel"),
+	UIPadding_61 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_88 = Instance.new("UIAspectRatioConstraint"),
+	PunchingBag = Instance.new("TextButton"),
+	UICorner_61 = Instance.new("UICorner"),
+	UIPadding_62 = Instance.new("UIPadding"),
+	UIAspectRatioConstraint_89 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_90 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_91 = Instance.new("UIAspectRatioConstraint"),
+	MenuFrame = Instance.new("Frame"),
+	UICorner_62 = Instance.new("UICorner"),
+	OpenAndClose = Instance.new("ImageButton"),
+	UICorner_63 = Instance.new("UICorner"),
+}
+
+--Properties:
+
+Orbit.Orbit.Name = "Orbit"
+Orbit.Orbit.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Orbit.Orbit.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Orbit.MainFrame.Name = "MainFrame"
+Orbit.MainFrame.Parent = Orbit.Orbit
+Orbit.MainFrame.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+Orbit.MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.MainFrame.BorderSizePixel = 0
+Orbit.MainFrame.Position = UDim2.new(0.345061719, 0, 0.229508191, 0)
+Orbit.MainFrame.Size = UDim2.new(0.309876531, 0, 0.540983617, 0)
+
+Orbit.UICorner.CornerRadius = UDim.new(0.0699300691, 0)
+Orbit.UICorner.Parent = Orbit.MainFrame
+
+Orbit.TopBar.Name = "TopBar"
+Orbit.TopBar.Parent = Orbit.MainFrame
+Orbit.TopBar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.TopBar.BackgroundTransparency = 1.000
+Orbit.TopBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.TopBar.BorderSizePixel = 0
+Orbit.TopBar.Size = UDim2.new(1.00000012, 0, 0.121212125, 0)
+
+Orbit.Title.Name = "Title"
+Orbit.Title.Parent = Orbit.TopBar
+Orbit.Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title.BackgroundTransparency = 1.000
+Orbit.Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Title.BorderSizePixel = 0
+Orbit.Title.Position = UDim2.new(0.0478087664, 0, 0, 0)
+Orbit.Title.Size = UDim2.new(0.47410357, 0, 0.961538434, 0)
+Orbit.Title.Font = Enum.Font.SourceSansBold
+Orbit.Title.Text = "Orbit"
+Orbit.Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title.TextScaled = true
+Orbit.Title.TextSize = 30.000
+Orbit.Title.TextWrapped = true
+Orbit.Title.TextXAlignment = Enum.TextXAlignment.Left
+
+Orbit.UIPadding.Parent = Orbit.Title
+Orbit.UIPadding.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint.Parent = Orbit.Title
+Orbit.UIAspectRatioConstraint.AspectRatio = 4.760
+
+Orbit.SearchBox.Name = "SearchBox"
+Orbit.SearchBox.Parent = Orbit.TopBar
+Orbit.SearchBox.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+Orbit.SearchBox.BackgroundTransparency = 1.000
+Orbit.SearchBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.SearchBox.BorderSizePixel = 0
+Orbit.SearchBox.Position = UDim2.new(0.415338665, 0, 0.192307726, 0)
+Orbit.SearchBox.Size = UDim2.new(0.523904324, 0, 0.632097125, 0)
+Orbit.SearchBox.Font = Enum.Font.SourceSansBold
+Orbit.SearchBox.Text = "Search here..."
+Orbit.SearchBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.SearchBox.TextScaled = true
+Orbit.SearchBox.TextSize = 20.000
+Orbit.SearchBox.TextWrapped = true
+Orbit.SearchBox.TextXAlignment = Enum.TextXAlignment.Right
+
+Orbit.UIPadding_2.Parent = Orbit.SearchBox
+Orbit.UIPadding_2.PaddingBottom = UDim.new(0.166666672, 0)
+Orbit.UIPadding_2.PaddingTop = UDim.new(0.166666672, 0)
+
+Orbit.UIAspectRatioConstraint_2.Parent = Orbit.SearchBox
+Orbit.UIAspectRatioConstraint_2.AspectRatio = 8.400
+
+Orbit.UIAspectRatioConstraint_3.Parent = Orbit.TopBar
+Orbit.UIAspectRatioConstraint_3.AspectRatio = 9.654
+
+Orbit.ScrollingFrame.Parent = Orbit.MainFrame
+Orbit.ScrollingFrame.Active = true
+Orbit.ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.ScrollingFrame.BackgroundTransparency = 1.000
+Orbit.ScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.ScrollingFrame.BorderSizePixel = 0
+Orbit.ScrollingFrame.Position = UDim2.new(0.0239043832, 0, 0.130536124, 0)
+Orbit.ScrollingFrame.Size = UDim2.new(0.960159421, 0, 0.82284385, 0)
+Orbit.ScrollingFrame.CanvasPosition = Vector2.new(0, 585.28125)
+Orbit.ScrollingFrame.CanvasSize = UDim2.new(0, 0, 5, 0)
+
+Orbit.SpeedFrame.Name = "SpeedFrame"
+Orbit.SpeedFrame.Parent = Orbit.ScrollingFrame
+Orbit.SpeedFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Orbit.SpeedFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.SpeedFrame.BorderSizePixel = 0
+Orbit.SpeedFrame.Position = UDim2.new(0.0280082989, 0, 0, 0)
+Orbit.SpeedFrame.Size = UDim2.new(0.943983376, 0, 0.0355477855, 0)
+
+Orbit.UICorner_2.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_2.Parent = Orbit.SpeedFrame
+
+Orbit.Title_2.Name = "Title"
+Orbit.Title_2.Parent = Orbit.SpeedFrame
+Orbit.Title_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_2.BackgroundTransparency = 1.000
+Orbit.Title_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Title_2.BorderSizePixel = 0
+Orbit.Title_2.Position = UDim2.new(0.0593406595, 0, 0.0819672123, 0)
+Orbit.Title_2.Size = UDim2.new(0.342857152, 0, 0.819672108, 0)
+Orbit.Title_2.Font = Enum.Font.SourceSansBold
+Orbit.Title_2.Text = "Speed"
+Orbit.Title_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_2.TextScaled = true
+Orbit.Title_2.TextSize = 30.000
+Orbit.Title_2.TextWrapped = true
+Orbit.Title_2.TextXAlignment = Enum.TextXAlignment.Left
+
+Orbit.UIPadding_3.Parent = Orbit.Title_2
+Orbit.UIPadding_3.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_3.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_4.Parent = Orbit.Title_2
+Orbit.UIAspectRatioConstraint_4.AspectRatio = 3.120
+
+Orbit.Speed.Name = "Speed"
+Orbit.Speed.Parent = Orbit.SpeedFrame
+Orbit.Speed.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.Speed.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Speed.BorderSizePixel = 0
+Orbit.Speed.Position = UDim2.new(0.540659368, 0, 0.0819672123, 0)
+Orbit.Speed.Size = UDim2.new(0.439560443, 0, 0.819672108, 0)
+Orbit.Speed.Font = Enum.Font.SourceSansBold
+Orbit.Speed.Text = "VALUE"
+Orbit.Speed.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Speed.TextScaled = true
+Orbit.Speed.TextSize = 30.000
+Orbit.Speed.TextWrapped = true
+
+Orbit.UICorner_3.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_3.Parent = Orbit.Speed
+
+Orbit.UIPadding_4.Parent = Orbit.Speed
+Orbit.UIPadding_4.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_4.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_5.Parent = Orbit.Speed
+Orbit.UIAspectRatioConstraint_5.AspectRatio = 4.000
+
+Orbit.UIAspectRatioConstraint_6.Parent = Orbit.SpeedFrame
+Orbit.UIAspectRatioConstraint_6.AspectRatio = 7.459
+
+Orbit.UIListLayout.Parent = Orbit.ScrollingFrame
+Orbit.UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+Orbit.UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+Orbit.UIListLayout.Padding = UDim.new(0.00582750561, 0)
+
+Orbit.JumpFrame.Name = "JumpFrame"
+Orbit.JumpFrame.Parent = Orbit.ScrollingFrame
+Orbit.JumpFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Orbit.JumpFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.JumpFrame.BorderSizePixel = 0
+Orbit.JumpFrame.Position = UDim2.new(0.0280082989, 0, 0, 0)
+Orbit.JumpFrame.Size = UDim2.new(0.943983376, 0, 0.0355477855, 0)
+
+Orbit.UICorner_4.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_4.Parent = Orbit.JumpFrame
+
+Orbit.Title_3.Name = "Title"
+Orbit.Title_3.Parent = Orbit.JumpFrame
+Orbit.Title_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_3.BackgroundTransparency = 1.000
+Orbit.Title_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Title_3.BorderSizePixel = 0
+Orbit.Title_3.Position = UDim2.new(0.0593406595, 0, 0.0819672123, 0)
+Orbit.Title_3.Size = UDim2.new(0.342857152, 0, 0.819672108, 0)
+Orbit.Title_3.Font = Enum.Font.SourceSansBold
+Orbit.Title_3.Text = "JumpPower"
+Orbit.Title_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_3.TextScaled = true
+Orbit.Title_3.TextSize = 30.000
+Orbit.Title_3.TextWrapped = true
+Orbit.Title_3.TextXAlignment = Enum.TextXAlignment.Left
+
+Orbit.UIPadding_5.Parent = Orbit.Title_3
+Orbit.UIPadding_5.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_5.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_7.Parent = Orbit.Title_3
+Orbit.UIAspectRatioConstraint_7.AspectRatio = 3.120
+
+Orbit.Jump.Name = "Jump"
+Orbit.Jump.Parent = Orbit.JumpFrame
+Orbit.Jump.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.Jump.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Jump.BorderSizePixel = 0
+Orbit.Jump.Position = UDim2.new(0.540659368, 0, 0.0819672123, 0)
+Orbit.Jump.Size = UDim2.new(0.439560443, 0, 0.819672108, 0)
+Orbit.Jump.Font = Enum.Font.SourceSansBold
+Orbit.Jump.Text = "VALUE"
+Orbit.Jump.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Jump.TextScaled = true
+Orbit.Jump.TextSize = 30.000
+Orbit.Jump.TextWrapped = true
+
+Orbit.UICorner_5.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_5.Parent = Orbit.Jump
+
+Orbit.UIPadding_6.Parent = Orbit.Jump
+Orbit.UIPadding_6.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_6.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_8.Parent = Orbit.Jump
+Orbit.UIAspectRatioConstraint_8.AspectRatio = 4.000
+
+Orbit.UIAspectRatioConstraint_9.Parent = Orbit.JumpFrame
+Orbit.UIAspectRatioConstraint_9.AspectRatio = 7.459
+
+Orbit.GravityFrame.Name = "GravityFrame"
+Orbit.GravityFrame.Parent = Orbit.ScrollingFrame
+Orbit.GravityFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Orbit.GravityFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.GravityFrame.BorderSizePixel = 0
+Orbit.GravityFrame.Position = UDim2.new(0.0280082989, 0, 0, 0)
+Orbit.GravityFrame.Size = UDim2.new(0.943983376, 0, 0.0355477855, 0)
+
+Orbit.UICorner_6.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_6.Parent = Orbit.GravityFrame
+
+Orbit.Title_4.Name = "Title"
+Orbit.Title_4.Parent = Orbit.GravityFrame
+Orbit.Title_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_4.BackgroundTransparency = 1.000
+Orbit.Title_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Title_4.BorderSizePixel = 0
+Orbit.Title_4.Position = UDim2.new(0.0593406595, 0, 0.0819672123, 0)
+Orbit.Title_4.Size = UDim2.new(0.342857152, 0, 0.819672108, 0)
+Orbit.Title_4.Font = Enum.Font.SourceSansBold
+Orbit.Title_4.Text = "Gravity"
+Orbit.Title_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_4.TextScaled = true
+Orbit.Title_4.TextSize = 30.000
+Orbit.Title_4.TextWrapped = true
+Orbit.Title_4.TextXAlignment = Enum.TextXAlignment.Left
+
+Orbit.UIPadding_7.Parent = Orbit.Title_4
+Orbit.UIPadding_7.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_7.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_10.Parent = Orbit.Title_4
+Orbit.UIAspectRatioConstraint_10.AspectRatio = 3.120
+
+Orbit.Gravity.Name = "Gravity"
+Orbit.Gravity.Parent = Orbit.GravityFrame
+Orbit.Gravity.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.Gravity.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Gravity.BorderSizePixel = 0
+Orbit.Gravity.Position = UDim2.new(0.540659368, 0, 0.0819672123, 0)
+Orbit.Gravity.Size = UDim2.new(0.439560443, 0, 0.819672108, 0)
+Orbit.Gravity.Font = Enum.Font.SourceSansBold
+Orbit.Gravity.Text = "VALUE"
+Orbit.Gravity.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Gravity.TextScaled = true
+Orbit.Gravity.TextSize = 30.000
+Orbit.Gravity.TextWrapped = true
+
+Orbit.UICorner_7.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_7.Parent = Orbit.Gravity
+
+Orbit.UIPadding_8.Parent = Orbit.Gravity
+Orbit.UIPadding_8.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_8.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_11.Parent = Orbit.Gravity
+Orbit.UIAspectRatioConstraint_11.AspectRatio = 4.000
+
+Orbit.UIAspectRatioConstraint_12.Parent = Orbit.GravityFrame
+Orbit.UIAspectRatioConstraint_12.AspectRatio = 7.459
+
+Orbit.HipheightFrame.Name = "HipheightFrame"
+Orbit.HipheightFrame.Parent = Orbit.ScrollingFrame
+Orbit.HipheightFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Orbit.HipheightFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.HipheightFrame.BorderSizePixel = 0
+Orbit.HipheightFrame.Position = UDim2.new(0.0280082989, 0, 0, 0)
+Orbit.HipheightFrame.Size = UDim2.new(0.943983376, 0, 0.0355477855, 0)
+
+Orbit.UICorner_8.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_8.Parent = Orbit.HipheightFrame
+
+Orbit.Title_5.Name = "Title"
+Orbit.Title_5.Parent = Orbit.HipheightFrame
+Orbit.Title_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_5.BackgroundTransparency = 1.000
+Orbit.Title_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Title_5.BorderSizePixel = 0
+Orbit.Title_5.Position = UDim2.new(0.0593406595, 0, 0.0819672123, 0)
+Orbit.Title_5.Size = UDim2.new(0.342857152, 0, 0.819672108, 0)
+Orbit.Title_5.Font = Enum.Font.SourceSansBold
+Orbit.Title_5.Text = "Hipheight"
+Orbit.Title_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_5.TextScaled = true
+Orbit.Title_5.TextSize = 30.000
+Orbit.Title_5.TextWrapped = true
+Orbit.Title_5.TextXAlignment = Enum.TextXAlignment.Left
+
+Orbit.UIPadding_9.Parent = Orbit.Title_5
+Orbit.UIPadding_9.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_9.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_13.Parent = Orbit.Title_5
+Orbit.UIAspectRatioConstraint_13.AspectRatio = 3.120
+
+Orbit.Hipheight.Name = "Hipheight"
+Orbit.Hipheight.Parent = Orbit.HipheightFrame
+Orbit.Hipheight.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.Hipheight.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Hipheight.BorderSizePixel = 0
+Orbit.Hipheight.Position = UDim2.new(0.540659368, 0, 0.0819672123, 0)
+Orbit.Hipheight.Size = UDim2.new(0.439560443, 0, 0.819672108, 0)
+Orbit.Hipheight.Font = Enum.Font.SourceSansBold
+Orbit.Hipheight.Text = "VALUE"
+Orbit.Hipheight.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Hipheight.TextScaled = true
+Orbit.Hipheight.TextSize = 30.000
+Orbit.Hipheight.TextWrapped = true
+
+Orbit.UICorner_9.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_9.Parent = Orbit.Hipheight
+
+Orbit.UIPadding_10.Parent = Orbit.Hipheight
+Orbit.UIPadding_10.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_10.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_14.Parent = Orbit.Hipheight
+Orbit.UIAspectRatioConstraint_14.AspectRatio = 4.000
+
+Orbit.UIAspectRatioConstraint_15.Parent = Orbit.HipheightFrame
+Orbit.UIAspectRatioConstraint_15.AspectRatio = 7.459
+
+Orbit.SpinFrame.Name = "SpinFrame"
+Orbit.SpinFrame.Parent = Orbit.ScrollingFrame
+Orbit.SpinFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Orbit.SpinFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.SpinFrame.BorderSizePixel = 0
+Orbit.SpinFrame.Position = UDim2.new(0.0280082989, 0, 0, 0)
+Orbit.SpinFrame.Size = UDim2.new(0.943983376, 0, 0.0355477855, 0)
+
+Orbit.UICorner_10.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_10.Parent = Orbit.SpinFrame
+
+Orbit.Title_6.Name = "Title"
+Orbit.Title_6.Parent = Orbit.SpinFrame
+Orbit.Title_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_6.BackgroundTransparency = 1.000
+Orbit.Title_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Title_6.BorderSizePixel = 0
+Orbit.Title_6.Position = UDim2.new(0.0593406595, 0, 0.0819672123, 0)
+Orbit.Title_6.Size = UDim2.new(0.342857152, 0, 0.819672108, 0)
+Orbit.Title_6.Font = Enum.Font.SourceSansBold
+Orbit.Title_6.Text = "Spin (0) = OFF"
+Orbit.Title_6.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_6.TextScaled = true
+Orbit.Title_6.TextSize = 30.000
+Orbit.Title_6.TextWrapped = true
+Orbit.Title_6.TextXAlignment = Enum.TextXAlignment.Left
+
+Orbit.UIPadding_11.Parent = Orbit.Title_6
+Orbit.UIPadding_11.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_11.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_16.Parent = Orbit.Title_6
+Orbit.UIAspectRatioConstraint_16.AspectRatio = 3.120
+
+Orbit.Spin.Name = "Spin"
+Orbit.Spin.Parent = Orbit.SpinFrame
+Orbit.Spin.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.Spin.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Spin.BorderSizePixel = 0
+Orbit.Spin.Position = UDim2.new(0.540659368, 0, 0.0819672123, 0)
+Orbit.Spin.Size = UDim2.new(0.439560443, 0, 0.819672108, 0)
+Orbit.Spin.Font = Enum.Font.SourceSansBold
+Orbit.Spin.Text = "VALUE"
+Orbit.Spin.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Spin.TextScaled = true
+Orbit.Spin.TextSize = 30.000
+Orbit.Spin.TextWrapped = true
+
+Orbit.UICorner_11.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_11.Parent = Orbit.Spin
+
+Orbit.UIPadding_12.Parent = Orbit.Spin
+Orbit.UIPadding_12.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_12.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_17.Parent = Orbit.Spin
+Orbit.UIAspectRatioConstraint_17.AspectRatio = 4.000
+
+Orbit.UIAspectRatioConstraint_18.Parent = Orbit.SpinFrame
+Orbit.UIAspectRatioConstraint_18.AspectRatio = 7.459
+
+Orbit.FlyFrame.Name = "FlyFrame"
+Orbit.FlyFrame.Parent = Orbit.ScrollingFrame
+Orbit.FlyFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Orbit.FlyFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.FlyFrame.BorderSizePixel = 0
+Orbit.FlyFrame.Position = UDim2.new(0.0280082989, 0, 0, 0)
+Orbit.FlyFrame.Size = UDim2.new(0.943983376, 0, 0.0355477855, 0)
+
+Orbit.UICorner_12.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_12.Parent = Orbit.FlyFrame
+
+Orbit.Title_7.Name = "Title"
+Orbit.Title_7.Parent = Orbit.FlyFrame
+Orbit.Title_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_7.BackgroundTransparency = 1.000
+Orbit.Title_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Title_7.BorderSizePixel = 0
+Orbit.Title_7.Position = UDim2.new(0.0593406595, 0, 0.0819672123, 0)
+Orbit.Title_7.Size = UDim2.new(0.342857152, 0, 0.819672108, 0)
+Orbit.Title_7.Font = Enum.Font.SourceSansBold
+Orbit.Title_7.Text = "Fly"
+Orbit.Title_7.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_7.TextScaled = true
+Orbit.Title_7.TextSize = 30.000
+Orbit.Title_7.TextWrapped = true
+Orbit.Title_7.TextXAlignment = Enum.TextXAlignment.Left
+
+Orbit.UIPadding_13.Parent = Orbit.Title_7
+Orbit.UIPadding_13.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_13.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_19.Parent = Orbit.Title_7
+Orbit.UIAspectRatioConstraint_19.AspectRatio = 3.120
+
+Orbit.ON.Name = "ON"
+Orbit.ON.Parent = Orbit.FlyFrame
+Orbit.ON.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.ON.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.ON.BorderSizePixel = 0
+Orbit.ON.Position = UDim2.new(0.767530918, 0, 0.0819672123, 0)
+Orbit.ON.Size = UDim2.new(0.206593409, 0, 0.819672108, 0)
+Orbit.ON.Font = Enum.Font.SourceSansBold
+Orbit.ON.Text = "ON"
+Orbit.ON.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.ON.TextScaled = true
+Orbit.ON.TextSize = 30.000
+Orbit.ON.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.ON.TextWrapped = true
+
+Orbit.UICorner_13.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_13.Parent = Orbit.ON
+
+Orbit.UIPadding_14.Parent = Orbit.ON
+Orbit.UIPadding_14.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_14.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_20.Parent = Orbit.ON
+Orbit.UIAspectRatioConstraint_20.AspectRatio = 1.880
+
+Orbit.OFF.Name = "OFF"
+Orbit.OFF.Parent = Orbit.FlyFrame
+Orbit.OFF.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.OFF.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.OFF.BorderSizePixel = 0
+Orbit.OFF.Position = UDim2.new(0.540659368, 0, 0.0819672123, 0)
+Orbit.OFF.Size = UDim2.new(0.206593409, 0, 0.819672108, 0)
+Orbit.OFF.Font = Enum.Font.SourceSansBold
+Orbit.OFF.Text = "OFF"
+Orbit.OFF.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.OFF.TextScaled = true
+Orbit.OFF.TextSize = 30.000
+Orbit.OFF.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.OFF.TextWrapped = true
+
+Orbit.UICorner_14.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_14.Parent = Orbit.OFF
+
+Orbit.UIPadding_15.Parent = Orbit.OFF
+Orbit.UIPadding_15.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_15.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_21.Parent = Orbit.OFF
+Orbit.UIAspectRatioConstraint_21.AspectRatio = 1.880
+
+Orbit.UIAspectRatioConstraint_22.Parent = Orbit.FlyFrame
+Orbit.UIAspectRatioConstraint_22.AspectRatio = 7.459
+
+Orbit.NoClipFrame.Name = "NoClipFrame"
+Orbit.NoClipFrame.Parent = Orbit.ScrollingFrame
+Orbit.NoClipFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Orbit.NoClipFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.NoClipFrame.BorderSizePixel = 0
+Orbit.NoClipFrame.Position = UDim2.new(0.0280082989, 0, 0, 0)
+Orbit.NoClipFrame.Size = UDim2.new(0.943983376, 0, 0.0355477855, 0)
+
+Orbit.UICorner_15.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_15.Parent = Orbit.NoClipFrame
+
+Orbit.Title_8.Name = "Title"
+Orbit.Title_8.Parent = Orbit.NoClipFrame
+Orbit.Title_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_8.BackgroundTransparency = 1.000
+Orbit.Title_8.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Title_8.BorderSizePixel = 0
+Orbit.Title_8.Position = UDim2.new(0.0593406595, 0, 0.0819672123, 0)
+Orbit.Title_8.Size = UDim2.new(0.342857152, 0, 0.819672108, 0)
+Orbit.Title_8.Font = Enum.Font.SourceSansBold
+Orbit.Title_8.Text = "Noclip"
+Orbit.Title_8.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_8.TextScaled = true
+Orbit.Title_8.TextSize = 30.000
+Orbit.Title_8.TextWrapped = true
+Orbit.Title_8.TextXAlignment = Enum.TextXAlignment.Left
+
+Orbit.UIPadding_16.Parent = Orbit.Title_8
+Orbit.UIPadding_16.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_16.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_23.Parent = Orbit.Title_8
+Orbit.UIAspectRatioConstraint_23.AspectRatio = 3.120
+
+Orbit.ON_2.Name = "ON"
+Orbit.ON_2.Parent = Orbit.NoClipFrame
+Orbit.ON_2.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.ON_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.ON_2.BorderSizePixel = 0
+Orbit.ON_2.Position = UDim2.new(0.767530918, 0, 0.0819672123, 0)
+Orbit.ON_2.Size = UDim2.new(0.206593409, 0, 0.819672108, 0)
+Orbit.ON_2.Font = Enum.Font.SourceSansBold
+Orbit.ON_2.Text = "ON"
+Orbit.ON_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.ON_2.TextScaled = true
+Orbit.ON_2.TextSize = 30.000
+Orbit.ON_2.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.ON_2.TextWrapped = true
+
+Orbit.UICorner_16.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_16.Parent = Orbit.ON_2
+
+Orbit.UIPadding_17.Parent = Orbit.ON_2
+Orbit.UIPadding_17.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_17.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_24.Parent = Orbit.ON_2
+Orbit.UIAspectRatioConstraint_24.AspectRatio = 1.880
+
+Orbit.OFF_2.Name = "OFF"
+Orbit.OFF_2.Parent = Orbit.NoClipFrame
+Orbit.OFF_2.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.OFF_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.OFF_2.BorderSizePixel = 0
+Orbit.OFF_2.Position = UDim2.new(0.540659368, 0, 0.0819672123, 0)
+Orbit.OFF_2.Size = UDim2.new(0.206593409, 0, 0.819672108, 0)
+Orbit.OFF_2.Font = Enum.Font.SourceSansBold
+Orbit.OFF_2.Text = "OFF"
+Orbit.OFF_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.OFF_2.TextScaled = true
+Orbit.OFF_2.TextSize = 30.000
+Orbit.OFF_2.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.OFF_2.TextWrapped = true
+
+Orbit.UICorner_17.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_17.Parent = Orbit.OFF_2
+
+Orbit.UIPadding_18.Parent = Orbit.OFF_2
+Orbit.UIPadding_18.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_18.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_25.Parent = Orbit.OFF_2
+Orbit.UIAspectRatioConstraint_25.AspectRatio = 1.880
+
+Orbit.UIAspectRatioConstraint_26.Parent = Orbit.NoClipFrame
+Orbit.UIAspectRatioConstraint_26.AspectRatio = 7.459
+
+Orbit.InvisibleFrame.Name = "InvisibleFrame"
+Orbit.InvisibleFrame.Parent = Orbit.ScrollingFrame
+Orbit.InvisibleFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Orbit.InvisibleFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.InvisibleFrame.BorderSizePixel = 0
+Orbit.InvisibleFrame.Position = UDim2.new(0.0280082989, 0, 0, 0)
+Orbit.InvisibleFrame.Size = UDim2.new(0.943983376, 0, 0.0355477855, 0)
+
+Orbit.UICorner_18.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_18.Parent = Orbit.InvisibleFrame
+
+Orbit.Title_9.Name = "Title"
+Orbit.Title_9.Parent = Orbit.InvisibleFrame
+Orbit.Title_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_9.BackgroundTransparency = 1.000
+Orbit.Title_9.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Title_9.BorderSizePixel = 0
+Orbit.Title_9.Position = UDim2.new(0.0593406595, 0, 0.0819672123, 0)
+Orbit.Title_9.Size = UDim2.new(0.342857152, 0, 0.819672108, 0)
+Orbit.Title_9.Font = Enum.Font.SourceSansBold
+Orbit.Title_9.Text = "Invisible"
+Orbit.Title_9.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_9.TextScaled = true
+Orbit.Title_9.TextSize = 30.000
+Orbit.Title_9.TextWrapped = true
+Orbit.Title_9.TextXAlignment = Enum.TextXAlignment.Left
+
+Orbit.UIPadding_19.Parent = Orbit.Title_9
+Orbit.UIPadding_19.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_19.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_27.Parent = Orbit.Title_9
+Orbit.UIAspectRatioConstraint_27.AspectRatio = 3.120
+
+Orbit.ON_3.Name = "ON"
+Orbit.ON_3.Parent = Orbit.InvisibleFrame
+Orbit.ON_3.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.ON_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.ON_3.BorderSizePixel = 0
+Orbit.ON_3.Position = UDim2.new(0.767530918, 0, 0.0819672123, 0)
+Orbit.ON_3.Size = UDim2.new(0.206593409, 0, 0.819672108, 0)
+Orbit.ON_3.Font = Enum.Font.SourceSansBold
+Orbit.ON_3.Text = "ON"
+Orbit.ON_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.ON_3.TextScaled = true
+Orbit.ON_3.TextSize = 30.000
+Orbit.ON_3.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.ON_3.TextWrapped = true
+
+Orbit.UICorner_19.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_19.Parent = Orbit.ON_3
+
+Orbit.UIPadding_20.Parent = Orbit.ON_3
+Orbit.UIPadding_20.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_20.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_28.Parent = Orbit.ON_3
+Orbit.UIAspectRatioConstraint_28.AspectRatio = 1.880
+
+Orbit.OFF_3.Name = "OFF"
+Orbit.OFF_3.Parent = Orbit.InvisibleFrame
+Orbit.OFF_3.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.OFF_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.OFF_3.BorderSizePixel = 0
+Orbit.OFF_3.Position = UDim2.new(0.540659368, 0, 0.0819672123, 0)
+Orbit.OFF_3.Size = UDim2.new(0.206593409, 0, 0.819672108, 0)
+Orbit.OFF_3.Font = Enum.Font.SourceSansBold
+Orbit.OFF_3.Text = "OFF"
+Orbit.OFF_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.OFF_3.TextScaled = true
+Orbit.OFF_3.TextSize = 30.000
+Orbit.OFF_3.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.OFF_3.TextWrapped = true
+
+Orbit.UICorner_20.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_20.Parent = Orbit.OFF_3
+
+Orbit.UIPadding_21.Parent = Orbit.OFF_3
+Orbit.UIPadding_21.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_21.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_29.Parent = Orbit.OFF_3
+Orbit.UIAspectRatioConstraint_29.AspectRatio = 1.880
+
+Orbit.UIAspectRatioConstraint_30.Parent = Orbit.InvisibleFrame
+Orbit.UIAspectRatioConstraint_30.AspectRatio = 7.459
+
+Orbit.DanceFrame.Name = "DanceFrame"
+Orbit.DanceFrame.Parent = Orbit.ScrollingFrame
+Orbit.DanceFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Orbit.DanceFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.DanceFrame.BorderSizePixel = 0
+Orbit.DanceFrame.Position = UDim2.new(0.0280082989, 0, 0, 0)
+Orbit.DanceFrame.Size = UDim2.new(0.943983376, 0, 0.0355477855, 0)
+
+Orbit.UICorner_21.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_21.Parent = Orbit.DanceFrame
+
+Orbit.Title_10.Name = "Title"
+Orbit.Title_10.Parent = Orbit.DanceFrame
+Orbit.Title_10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_10.BackgroundTransparency = 1.000
+Orbit.Title_10.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Title_10.BorderSizePixel = 0
+Orbit.Title_10.Position = UDim2.new(0.0593406595, 0, 0.0819672123, 0)
+Orbit.Title_10.Size = UDim2.new(0.342857152, 0, 0.819672108, 0)
+Orbit.Title_10.Font = Enum.Font.SourceSansBold
+Orbit.Title_10.Text = "Dance"
+Orbit.Title_10.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_10.TextScaled = true
+Orbit.Title_10.TextSize = 30.000
+Orbit.Title_10.TextWrapped = true
+Orbit.Title_10.TextXAlignment = Enum.TextXAlignment.Left
+
+Orbit.UIPadding_22.Parent = Orbit.Title_10
+Orbit.UIPadding_22.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_22.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_31.Parent = Orbit.Title_10
+Orbit.UIAspectRatioConstraint_31.AspectRatio = 3.120
+
+Orbit.ON_4.Name = "ON"
+Orbit.ON_4.Parent = Orbit.DanceFrame
+Orbit.ON_4.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.ON_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.ON_4.BorderSizePixel = 0
+Orbit.ON_4.Position = UDim2.new(0.767530918, 0, 0.0819672123, 0)
+Orbit.ON_4.Size = UDim2.new(0.206593409, 0, 0.819672108, 0)
+Orbit.ON_4.Font = Enum.Font.SourceSansBold
+Orbit.ON_4.Text = "ON"
+Orbit.ON_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.ON_4.TextScaled = true
+Orbit.ON_4.TextSize = 30.000
+Orbit.ON_4.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.ON_4.TextWrapped = true
+
+Orbit.UICorner_22.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_22.Parent = Orbit.ON_4
+
+Orbit.UIPadding_23.Parent = Orbit.ON_4
+Orbit.UIPadding_23.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_23.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_32.Parent = Orbit.ON_4
+Orbit.UIAspectRatioConstraint_32.AspectRatio = 1.880
+
+Orbit.OFF_4.Name = "OFF"
+Orbit.OFF_4.Parent = Orbit.DanceFrame
+Orbit.OFF_4.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.OFF_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.OFF_4.BorderSizePixel = 0
+Orbit.OFF_4.Position = UDim2.new(0.540659368, 0, 0.0819672123, 0)
+Orbit.OFF_4.Size = UDim2.new(0.206593409, 0, 0.819672108, 0)
+Orbit.OFF_4.Font = Enum.Font.SourceSansBold
+Orbit.OFF_4.Text = "OFF"
+Orbit.OFF_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.OFF_4.TextScaled = true
+Orbit.OFF_4.TextSize = 30.000
+Orbit.OFF_4.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.OFF_4.TextWrapped = true
+
+Orbit.UICorner_23.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_23.Parent = Orbit.OFF_4
+
+Orbit.UIPadding_24.Parent = Orbit.OFF_4
+Orbit.UIPadding_24.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_24.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_33.Parent = Orbit.OFF_4
+Orbit.UIAspectRatioConstraint_33.AspectRatio = 1.880
+
+Orbit.UIAspectRatioConstraint_34.Parent = Orbit.DanceFrame
+Orbit.UIAspectRatioConstraint_34.AspectRatio = 7.459
+
+Orbit.WaveFrame.Name = "WaveFrame"
+Orbit.WaveFrame.Parent = Orbit.ScrollingFrame
+Orbit.WaveFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Orbit.WaveFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.WaveFrame.BorderSizePixel = 0
+Orbit.WaveFrame.Position = UDim2.new(0.0280082989, 0, 0, 0)
+Orbit.WaveFrame.Size = UDim2.new(0.943983376, 0, 0.0355477855, 0)
+
+Orbit.UICorner_24.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_24.Parent = Orbit.WaveFrame
+
+Orbit.Title_11.Name = "Title"
+Orbit.Title_11.Parent = Orbit.WaveFrame
+Orbit.Title_11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_11.BackgroundTransparency = 1.000
+Orbit.Title_11.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Title_11.BorderSizePixel = 0
+Orbit.Title_11.Position = UDim2.new(0.0593406595, 0, 0.0819672123, 0)
+Orbit.Title_11.Size = UDim2.new(0.342857152, 0, 0.819672108, 0)
+Orbit.Title_11.Font = Enum.Font.SourceSansBold
+Orbit.Title_11.Text = "Wave"
+Orbit.Title_11.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_11.TextScaled = true
+Orbit.Title_11.TextSize = 30.000
+Orbit.Title_11.TextWrapped = true
+Orbit.Title_11.TextXAlignment = Enum.TextXAlignment.Left
+
+Orbit.UIPadding_25.Parent = Orbit.Title_11
+Orbit.UIPadding_25.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_25.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_35.Parent = Orbit.Title_11
+Orbit.UIAspectRatioConstraint_35.AspectRatio = 3.120
+
+Orbit.ON_5.Name = "ON"
+Orbit.ON_5.Parent = Orbit.WaveFrame
+Orbit.ON_5.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.ON_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.ON_5.BorderSizePixel = 0
+Orbit.ON_5.Position = UDim2.new(0.767530918, 0, 0.0819672123, 0)
+Orbit.ON_5.Size = UDim2.new(0.206593409, 0, 0.819672108, 0)
+Orbit.ON_5.Font = Enum.Font.SourceSansBold
+Orbit.ON_5.Text = "ON"
+Orbit.ON_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.ON_5.TextScaled = true
+Orbit.ON_5.TextSize = 30.000
+Orbit.ON_5.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.ON_5.TextWrapped = true
+
+Orbit.UICorner_25.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_25.Parent = Orbit.ON_5
+
+Orbit.UIPadding_26.Parent = Orbit.ON_5
+Orbit.UIPadding_26.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_26.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_36.Parent = Orbit.ON_5
+Orbit.UIAspectRatioConstraint_36.AspectRatio = 1.880
+
+Orbit.OFF_5.Name = "OFF"
+Orbit.OFF_5.Parent = Orbit.WaveFrame
+Orbit.OFF_5.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.OFF_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.OFF_5.BorderSizePixel = 0
+Orbit.OFF_5.Position = UDim2.new(0.540659368, 0, 0.0819672123, 0)
+Orbit.OFF_5.Size = UDim2.new(0.206593409, 0, 0.819672108, 0)
+Orbit.OFF_5.Font = Enum.Font.SourceSansBold
+Orbit.OFF_5.Text = "OFF"
+Orbit.OFF_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.OFF_5.TextScaled = true
+Orbit.OFF_5.TextSize = 30.000
+Orbit.OFF_5.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.OFF_5.TextWrapped = true
+
+Orbit.UICorner_26.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_26.Parent = Orbit.OFF_5
+
+Orbit.UIPadding_27.Parent = Orbit.OFF_5
+Orbit.UIPadding_27.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_27.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_37.Parent = Orbit.OFF_5
+Orbit.UIAspectRatioConstraint_37.AspectRatio = 1.880
+
+Orbit.UIAspectRatioConstraint_38.Parent = Orbit.WaveFrame
+Orbit.UIAspectRatioConstraint_38.AspectRatio = 7.459
+
+Orbit.PrintFrame.Name = "PrintFrame"
+Orbit.PrintFrame.Parent = Orbit.ScrollingFrame
+Orbit.PrintFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Orbit.PrintFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.PrintFrame.BorderSizePixel = 0
+Orbit.PrintFrame.Position = UDim2.new(0.0280082989, 0, 0, 0)
+Orbit.PrintFrame.Size = UDim2.new(0.943983376, 0, 0.0355477855, 0)
+
+Orbit.UICorner_27.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_27.Parent = Orbit.PrintFrame
+
+Orbit.Title_12.Name = "Title"
+Orbit.Title_12.Parent = Orbit.PrintFrame
+Orbit.Title_12.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_12.BackgroundTransparency = 1.000
+Orbit.Title_12.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Title_12.BorderSizePixel = 0
+Orbit.Title_12.Position = UDim2.new(0.0593406595, 0, 0.0819672123, 0)
+Orbit.Title_12.Size = UDim2.new(0.342857152, 0, 0.819672108, 0)
+Orbit.Title_12.Font = Enum.Font.SourceSansBold
+Orbit.Title_12.Text = "Print"
+Orbit.Title_12.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_12.TextScaled = true
+Orbit.Title_12.TextSize = 30.000
+Orbit.Title_12.TextWrapped = true
+Orbit.Title_12.TextXAlignment = Enum.TextXAlignment.Left
+
+Orbit.UIPadding_28.Parent = Orbit.Title_12
+Orbit.UIPadding_28.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_28.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_39.Parent = Orbit.Title_12
+Orbit.UIAspectRatioConstraint_39.AspectRatio = 3.120
+
+Orbit.Print.Name = "Print"
+Orbit.Print.Parent = Orbit.PrintFrame
+Orbit.Print.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.Print.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Print.BorderSizePixel = 0
+Orbit.Print.Position = UDim2.new(0.540659368, 0, 0.0819672123, 0)
+Orbit.Print.Size = UDim2.new(0.439560443, 0, 0.819672108, 0)
+Orbit.Print.Font = Enum.Font.SourceSansBold
+Orbit.Print.Text = "CLICK HERE"
+Orbit.Print.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Print.TextScaled = true
+Orbit.Print.TextSize = 30.000
+Orbit.Print.TextWrapped = true
+
+Orbit.UICorner_28.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_28.Parent = Orbit.Print
+
+Orbit.UIPadding_29.Parent = Orbit.Print
+Orbit.UIPadding_29.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_29.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_40.Parent = Orbit.Print
+Orbit.UIAspectRatioConstraint_40.AspectRatio = 4.000
+
+Orbit.UIAspectRatioConstraint_41.Parent = Orbit.PrintFrame
+Orbit.UIAspectRatioConstraint_41.AspectRatio = 7.459
+
+Orbit.RemoteSpyFrame.Name = "RemoteSpyFrame"
+Orbit.RemoteSpyFrame.Parent = Orbit.ScrollingFrame
+Orbit.RemoteSpyFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Orbit.RemoteSpyFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.RemoteSpyFrame.BorderSizePixel = 0
+Orbit.RemoteSpyFrame.Position = UDim2.new(0.0280082989, 0, 0, 0)
+Orbit.RemoteSpyFrame.Size = UDim2.new(0.943983376, 0, 0.0355477855, 0)
+
+Orbit.UICorner_29.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_29.Parent = Orbit.RemoteSpyFrame
+
+Orbit.Title_13.Name = "Title"
+Orbit.Title_13.Parent = Orbit.RemoteSpyFrame
+Orbit.Title_13.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_13.BackgroundTransparency = 1.000
+Orbit.Title_13.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Title_13.BorderSizePixel = 0
+Orbit.Title_13.Position = UDim2.new(0.0593406595, 0, 0.0819672123, 0)
+Orbit.Title_13.Size = UDim2.new(0.342857152, 0, 0.819672108, 0)
+Orbit.Title_13.Font = Enum.Font.SourceSansBold
+Orbit.Title_13.Text = "RemoteSpy"
+Orbit.Title_13.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_13.TextScaled = true
+Orbit.Title_13.TextSize = 30.000
+Orbit.Title_13.TextWrapped = true
+Orbit.Title_13.TextXAlignment = Enum.TextXAlignment.Left
+
+Orbit.UIPadding_30.Parent = Orbit.Title_13
+Orbit.UIPadding_30.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_30.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_42.Parent = Orbit.Title_13
+Orbit.UIAspectRatioConstraint_42.AspectRatio = 3.120
+
+Orbit.RemoteSpy.Name = "RemoteSpy"
+Orbit.RemoteSpy.Parent = Orbit.RemoteSpyFrame
+Orbit.RemoteSpy.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.RemoteSpy.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.RemoteSpy.BorderSizePixel = 0
+Orbit.RemoteSpy.Position = UDim2.new(0.540659368, 0, 0.0819672123, 0)
+Orbit.RemoteSpy.Size = UDim2.new(0.439560443, 0, 0.819672108, 0)
+Orbit.RemoteSpy.Font = Enum.Font.SourceSansBold
+Orbit.RemoteSpy.Text = "CLICK HERE"
+Orbit.RemoteSpy.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.RemoteSpy.TextScaled = true
+Orbit.RemoteSpy.TextSize = 30.000
+Orbit.RemoteSpy.TextWrapped = true
+
+Orbit.UICorner_30.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_30.Parent = Orbit.RemoteSpy
+
+Orbit.UIPadding_31.Parent = Orbit.RemoteSpy
+Orbit.UIPadding_31.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_31.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_43.Parent = Orbit.RemoteSpy
+Orbit.UIAspectRatioConstraint_43.AspectRatio = 4.000
+
+Orbit.UIAspectRatioConstraint_44.Parent = Orbit.RemoteSpyFrame
+Orbit.UIAspectRatioConstraint_44.AspectRatio = 7.459
+
+Orbit.TurtleSpyFrame.Name = "TurtleSpyFrame"
+Orbit.TurtleSpyFrame.Parent = Orbit.ScrollingFrame
+Orbit.TurtleSpyFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Orbit.TurtleSpyFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.TurtleSpyFrame.BorderSizePixel = 0
+Orbit.TurtleSpyFrame.Position = UDim2.new(0.0280082989, 0, 0, 0)
+Orbit.TurtleSpyFrame.Size = UDim2.new(0.943983376, 0, 0.0355477855, 0)
+
+Orbit.UICorner_31.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_31.Parent = Orbit.TurtleSpyFrame
+
+Orbit.Title_14.Name = "Title"
+Orbit.Title_14.Parent = Orbit.TurtleSpyFrame
+Orbit.Title_14.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_14.BackgroundTransparency = 1.000
+Orbit.Title_14.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Title_14.BorderSizePixel = 0
+Orbit.Title_14.Position = UDim2.new(0.0593406595, 0, 0.0819672123, 0)
+Orbit.Title_14.Size = UDim2.new(0.342857152, 0, 0.819672108, 0)
+Orbit.Title_14.Font = Enum.Font.SourceSansBold
+Orbit.Title_14.Text = "ConsoleSpy"
+Orbit.Title_14.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_14.TextScaled = true
+Orbit.Title_14.TextSize = 30.000
+Orbit.Title_14.TextWrapped = true
+Orbit.Title_14.TextXAlignment = Enum.TextXAlignment.Left
+
+Orbit.UIPadding_32.Parent = Orbit.Title_14
+Orbit.UIPadding_32.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_32.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_45.Parent = Orbit.Title_14
+Orbit.UIAspectRatioConstraint_45.AspectRatio = 3.120
+
+Orbit.TurtleSpy.Name = "TurtleSpy"
+Orbit.TurtleSpy.Parent = Orbit.TurtleSpyFrame
+Orbit.TurtleSpy.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.TurtleSpy.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.TurtleSpy.BorderSizePixel = 0
+Orbit.TurtleSpy.Position = UDim2.new(0.540659368, 0, 0.0819672123, 0)
+Orbit.TurtleSpy.Size = UDim2.new(0.439560443, 0, 0.819672108, 0)
+Orbit.TurtleSpy.Font = Enum.Font.SourceSansBold
+Orbit.TurtleSpy.Text = "CLICK HERE"
+Orbit.TurtleSpy.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.TurtleSpy.TextScaled = true
+Orbit.TurtleSpy.TextSize = 30.000
+Orbit.TurtleSpy.TextWrapped = true
+
+Orbit.UICorner_32.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_32.Parent = Orbit.TurtleSpy
+
+Orbit.UIPadding_33.Parent = Orbit.TurtleSpy
+Orbit.UIPadding_33.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_33.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_46.Parent = Orbit.TurtleSpy
+Orbit.UIAspectRatioConstraint_46.AspectRatio = 4.000
+
+Orbit.UIAspectRatioConstraint_47.Parent = Orbit.TurtleSpyFrame
+Orbit.UIAspectRatioConstraint_47.AspectRatio = 7.459
+
+Orbit.RejoinFrame.Name = "RejoinFrame"
+Orbit.RejoinFrame.Parent = Orbit.ScrollingFrame
+Orbit.RejoinFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Orbit.RejoinFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.RejoinFrame.BorderSizePixel = 0
+Orbit.RejoinFrame.Position = UDim2.new(0.0280082989, 0, 0, 0)
+Orbit.RejoinFrame.Size = UDim2.new(0.943983376, 0, 0.0355477855, 0)
+
+Orbit.UICorner_33.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_33.Parent = Orbit.RejoinFrame
+
+Orbit.Title_15.Name = "Title"
+Orbit.Title_15.Parent = Orbit.RejoinFrame
+Orbit.Title_15.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_15.BackgroundTransparency = 1.000
+Orbit.Title_15.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Title_15.BorderSizePixel = 0
+Orbit.Title_15.Position = UDim2.new(0.0593406595, 0, 0.0819672123, 0)
+Orbit.Title_15.Size = UDim2.new(0.342857152, 0, 0.819672108, 0)
+Orbit.Title_15.Font = Enum.Font.SourceSansBold
+Orbit.Title_15.Text = "Rejoin"
+Orbit.Title_15.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_15.TextScaled = true
+Orbit.Title_15.TextSize = 30.000
+Orbit.Title_15.TextWrapped = true
+Orbit.Title_15.TextXAlignment = Enum.TextXAlignment.Left
+
+Orbit.UIPadding_34.Parent = Orbit.Title_15
+Orbit.UIPadding_34.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_34.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_48.Parent = Orbit.Title_15
+Orbit.UIAspectRatioConstraint_48.AspectRatio = 3.120
+
+Orbit.Rejoin.Name = "Rejoin"
+Orbit.Rejoin.Parent = Orbit.RejoinFrame
+Orbit.Rejoin.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.Rejoin.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Rejoin.BorderSizePixel = 0
+Orbit.Rejoin.Position = UDim2.new(0.540659368, 0, 0.0819672123, 0)
+Orbit.Rejoin.Size = UDim2.new(0.439560443, 0, 0.819672108, 0)
+Orbit.Rejoin.Font = Enum.Font.SourceSansBold
+Orbit.Rejoin.Text = "CLICK HERE"
+Orbit.Rejoin.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Rejoin.TextScaled = true
+Orbit.Rejoin.TextSize = 30.000
+Orbit.Rejoin.TextWrapped = true
+
+Orbit.UICorner_34.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_34.Parent = Orbit.Rejoin
+
+Orbit.UIPadding_35.Parent = Orbit.Rejoin
+Orbit.UIPadding_35.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_35.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_49.Parent = Orbit.Rejoin
+Orbit.UIAspectRatioConstraint_49.AspectRatio = 4.000
+
+Orbit.UIAspectRatioConstraint_50.Parent = Orbit.RejoinFrame
+Orbit.UIAspectRatioConstraint_50.AspectRatio = 7.459
+
+Orbit.DayFrame.Name = "DayFrame"
+Orbit.DayFrame.Parent = Orbit.ScrollingFrame
+Orbit.DayFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Orbit.DayFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.DayFrame.BorderSizePixel = 0
+Orbit.DayFrame.Position = UDim2.new(0.0280082989, 0, 0, 0)
+Orbit.DayFrame.Size = UDim2.new(0.943983376, 0, 0.0355477855, 0)
+
+Orbit.UICorner_35.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_35.Parent = Orbit.DayFrame
+
+Orbit.Title_16.Name = "Title"
+Orbit.Title_16.Parent = Orbit.DayFrame
+Orbit.Title_16.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_16.BackgroundTransparency = 1.000
+Orbit.Title_16.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Title_16.BorderSizePixel = 0
+Orbit.Title_16.Position = UDim2.new(0.0593406595, 0, 0.0819672123, 0)
+Orbit.Title_16.Size = UDim2.new(0.342857152, 0, 0.819672108, 0)
+Orbit.Title_16.Font = Enum.Font.SourceSansBold
+Orbit.Title_16.Text = "Day"
+Orbit.Title_16.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_16.TextScaled = true
+Orbit.Title_16.TextSize = 30.000
+Orbit.Title_16.TextWrapped = true
+Orbit.Title_16.TextXAlignment = Enum.TextXAlignment.Left
+
+Orbit.UIPadding_36.Parent = Orbit.Title_16
+Orbit.UIPadding_36.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_36.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_51.Parent = Orbit.Title_16
+Orbit.UIAspectRatioConstraint_51.AspectRatio = 3.120
+
+Orbit.Day.Name = "Day"
+Orbit.Day.Parent = Orbit.DayFrame
+Orbit.Day.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.Day.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Day.BorderSizePixel = 0
+Orbit.Day.Position = UDim2.new(0.540659368, 0, 0.0819672123, 0)
+Orbit.Day.Size = UDim2.new(0.439560443, 0, 0.819672108, 0)
+Orbit.Day.Font = Enum.Font.SourceSansBold
+Orbit.Day.Text = "CLICK HERE"
+Orbit.Day.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Day.TextScaled = true
+Orbit.Day.TextSize = 30.000
+Orbit.Day.TextWrapped = true
+
+Orbit.UICorner_36.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_36.Parent = Orbit.Day
+
+Orbit.UIPadding_37.Parent = Orbit.Day
+Orbit.UIPadding_37.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_37.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_52.Parent = Orbit.Day
+Orbit.UIAspectRatioConstraint_52.AspectRatio = 4.000
+
+Orbit.UIAspectRatioConstraint_53.Parent = Orbit.DayFrame
+Orbit.UIAspectRatioConstraint_53.AspectRatio = 7.459
+
+Orbit.NightFrame.Name = "NightFrame"
+Orbit.NightFrame.Parent = Orbit.ScrollingFrame
+Orbit.NightFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Orbit.NightFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.NightFrame.BorderSizePixel = 0
+Orbit.NightFrame.Position = UDim2.new(0.0280082989, 0, 0, 0)
+Orbit.NightFrame.Size = UDim2.new(0.943983376, 0, 0.0355477855, 0)
+
+Orbit.UICorner_37.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_37.Parent = Orbit.NightFrame
+
+Orbit.Title_17.Name = "Title"
+Orbit.Title_17.Parent = Orbit.NightFrame
+Orbit.Title_17.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_17.BackgroundTransparency = 1.000
+Orbit.Title_17.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Title_17.BorderSizePixel = 0
+Orbit.Title_17.Position = UDim2.new(0.0593406595, 0, 0.0819672123, 0)
+Orbit.Title_17.Size = UDim2.new(0.342857152, 0, 0.819672108, 0)
+Orbit.Title_17.Font = Enum.Font.SourceSansBold
+Orbit.Title_17.Text = "Night"
+Orbit.Title_17.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_17.TextScaled = true
+Orbit.Title_17.TextSize = 30.000
+Orbit.Title_17.TextWrapped = true
+Orbit.Title_17.TextXAlignment = Enum.TextXAlignment.Left
+
+Orbit.UIPadding_38.Parent = Orbit.Title_17
+Orbit.UIPadding_38.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_38.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_54.Parent = Orbit.Title_17
+Orbit.UIAspectRatioConstraint_54.AspectRatio = 3.120
+
+Orbit.Night.Name = "Night"
+Orbit.Night.Parent = Orbit.NightFrame
+Orbit.Night.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.Night.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Night.BorderSizePixel = 0
+Orbit.Night.Position = UDim2.new(0.540659368, 0, 0.0819672123, 0)
+Orbit.Night.Size = UDim2.new(0.439560443, 0, 0.819672108, 0)
+Orbit.Night.Font = Enum.Font.SourceSansBold
+Orbit.Night.Text = "CLICK HERE"
+Orbit.Night.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Night.TextScaled = true
+Orbit.Night.TextSize = 30.000
+Orbit.Night.TextWrapped = true
+
+Orbit.UICorner_38.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_38.Parent = Orbit.Night
+
+Orbit.UIPadding_39.Parent = Orbit.Night
+Orbit.UIPadding_39.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_39.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_55.Parent = Orbit.Night
+Orbit.UIAspectRatioConstraint_55.AspectRatio = 4.000
+
+Orbit.UIAspectRatioConstraint_56.Parent = Orbit.NightFrame
+Orbit.UIAspectRatioConstraint_56.AspectRatio = 7.459
+
+Orbit.RainFrame.Name = "RainFrame"
+Orbit.RainFrame.Parent = Orbit.ScrollingFrame
+Orbit.RainFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Orbit.RainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.RainFrame.BorderSizePixel = 0
+Orbit.RainFrame.Position = UDim2.new(0.0280082989, 0, 0, 0)
+Orbit.RainFrame.Size = UDim2.new(0.943983376, 0, 0.0355477855, 0)
+
+Orbit.UICorner_39.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_39.Parent = Orbit.RainFrame
+
+Orbit.Title_18.Name = "Title"
+Orbit.Title_18.Parent = Orbit.RainFrame
+Orbit.Title_18.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_18.BackgroundTransparency = 1.000
+Orbit.Title_18.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Title_18.BorderSizePixel = 0
+Orbit.Title_18.Position = UDim2.new(0.0593406595, 0, 0.0819672123, 0)
+Orbit.Title_18.Size = UDim2.new(0.342857152, 0, 0.819672108, 0)
+Orbit.Title_18.Font = Enum.Font.SourceSansBold
+Orbit.Title_18.Text = "Rain"
+Orbit.Title_18.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_18.TextScaled = true
+Orbit.Title_18.TextSize = 30.000
+Orbit.Title_18.TextWrapped = true
+Orbit.Title_18.TextXAlignment = Enum.TextXAlignment.Left
+
+Orbit.UIPadding_40.Parent = Orbit.Title_18
+Orbit.UIPadding_40.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_40.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_57.Parent = Orbit.Title_18
+Orbit.UIAspectRatioConstraint_57.AspectRatio = 3.120
+
+Orbit.Rain.Name = "Rain"
+Orbit.Rain.Parent = Orbit.RainFrame
+Orbit.Rain.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.Rain.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Rain.BorderSizePixel = 0
+Orbit.Rain.Position = UDim2.new(0.540659368, 0, 0.0819672123, 0)
+Orbit.Rain.Size = UDim2.new(0.439560443, 0, 0.819672108, 0)
+Orbit.Rain.Font = Enum.Font.SourceSansBold
+Orbit.Rain.Text = "CLICK HERE"
+Orbit.Rain.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Rain.TextScaled = true
+Orbit.Rain.TextSize = 30.000
+Orbit.Rain.TextWrapped = true
+
+Orbit.UICorner_40.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_40.Parent = Orbit.Rain
+
+Orbit.UIPadding_41.Parent = Orbit.Rain
+Orbit.UIPadding_41.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_41.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_58.Parent = Orbit.Rain
+Orbit.UIAspectRatioConstraint_58.AspectRatio = 4.000
+
+Orbit.UIAspectRatioConstraint_59.Parent = Orbit.RainFrame
+Orbit.UIAspectRatioConstraint_59.AspectRatio = 7.459
+
+Orbit.RemoveRainFrame.Name = "RemoveRainFrame"
+Orbit.RemoveRainFrame.Parent = Orbit.ScrollingFrame
+Orbit.RemoveRainFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Orbit.RemoveRainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.RemoveRainFrame.BorderSizePixel = 0
+Orbit.RemoveRainFrame.Position = UDim2.new(0.0280082989, 0, 0, 0)
+Orbit.RemoveRainFrame.Size = UDim2.new(0.943983376, 0, 0.0355477855, 0)
+
+Orbit.UICorner_41.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_41.Parent = Orbit.RemoveRainFrame
+
+Orbit.Title_19.Name = "Title"
+Orbit.Title_19.Parent = Orbit.RemoveRainFrame
+Orbit.Title_19.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_19.BackgroundTransparency = 1.000
+Orbit.Title_19.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Title_19.BorderSizePixel = 0
+Orbit.Title_19.Position = UDim2.new(0.0593406595, 0, 0.0819672123, 0)
+Orbit.Title_19.Size = UDim2.new(0.342857152, 0, 0.819672108, 0)
+Orbit.Title_19.Font = Enum.Font.SourceSansBold
+Orbit.Title_19.Text = "Remove Rain"
+Orbit.Title_19.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_19.TextScaled = true
+Orbit.Title_19.TextSize = 30.000
+Orbit.Title_19.TextWrapped = true
+Orbit.Title_19.TextXAlignment = Enum.TextXAlignment.Left
+
+Orbit.UIPadding_42.Parent = Orbit.Title_19
+Orbit.UIPadding_42.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_42.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_60.Parent = Orbit.Title_19
+Orbit.UIAspectRatioConstraint_60.AspectRatio = 3.120
+
+Orbit.RemoveRain.Name = "RemoveRain"
+Orbit.RemoveRain.Parent = Orbit.RemoveRainFrame
+Orbit.RemoveRain.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.RemoveRain.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.RemoveRain.BorderSizePixel = 0
+Orbit.RemoveRain.Position = UDim2.new(0.540659368, 0, 0.0819672123, 0)
+Orbit.RemoveRain.Size = UDim2.new(0.439560443, 0, 0.819672108, 0)
+Orbit.RemoveRain.Font = Enum.Font.SourceSansBold
+Orbit.RemoveRain.Text = "CLICK HERE"
+Orbit.RemoveRain.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.RemoveRain.TextScaled = true
+Orbit.RemoveRain.TextSize = 30.000
+Orbit.RemoveRain.TextWrapped = true
+
+Orbit.UICorner_42.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_42.Parent = Orbit.RemoveRain
+
+Orbit.UIPadding_43.Parent = Orbit.RemoveRain
+Orbit.UIPadding_43.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_43.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_61.Parent = Orbit.RemoveRain
+Orbit.UIAspectRatioConstraint_61.AspectRatio = 4.000
+
+Orbit.UIAspectRatioConstraint_62.Parent = Orbit.RemoveRainFrame
+Orbit.UIAspectRatioConstraint_62.AspectRatio = 7.459
+
+Orbit.SitFrame.Name = "SitFrame"
+Orbit.SitFrame.Parent = Orbit.ScrollingFrame
+Orbit.SitFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Orbit.SitFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.SitFrame.BorderSizePixel = 0
+Orbit.SitFrame.Position = UDim2.new(0.0280082989, 0, 0, 0)
+Orbit.SitFrame.Size = UDim2.new(0.943983376, 0, 0.0355477855, 0)
+
+Orbit.UICorner_43.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_43.Parent = Orbit.SitFrame
+
+Orbit.Title_20.Name = "Title"
+Orbit.Title_20.Parent = Orbit.SitFrame
+Orbit.Title_20.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_20.BackgroundTransparency = 1.000
+Orbit.Title_20.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Title_20.BorderSizePixel = 0
+Orbit.Title_20.Position = UDim2.new(0.0593406595, 0, 0.0819672123, 0)
+Orbit.Title_20.Size = UDim2.new(0.342857152, 0, 0.819672108, 0)
+Orbit.Title_20.Font = Enum.Font.SourceSansBold
+Orbit.Title_20.Text = "Sit"
+Orbit.Title_20.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_20.TextScaled = true
+Orbit.Title_20.TextSize = 30.000
+Orbit.Title_20.TextWrapped = true
+Orbit.Title_20.TextXAlignment = Enum.TextXAlignment.Left
+
+Orbit.UIPadding_44.Parent = Orbit.Title_20
+Orbit.UIPadding_44.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_44.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_63.Parent = Orbit.Title_20
+Orbit.UIAspectRatioConstraint_63.AspectRatio = 3.120
+
+Orbit.Sit.Name = "Sit"
+Orbit.Sit.Parent = Orbit.SitFrame
+Orbit.Sit.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.Sit.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Sit.BorderSizePixel = 0
+Orbit.Sit.Position = UDim2.new(0.540659368, 0, 0.0819672123, 0)
+Orbit.Sit.Size = UDim2.new(0.439560443, 0, 0.819672108, 0)
+Orbit.Sit.Font = Enum.Font.SourceSansBold
+Orbit.Sit.Text = "CLICK HERE"
+Orbit.Sit.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Sit.TextScaled = true
+Orbit.Sit.TextSize = 30.000
+Orbit.Sit.TextWrapped = true
+
+Orbit.UICorner_44.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_44.Parent = Orbit.Sit
+
+Orbit.UIPadding_45.Parent = Orbit.Sit
+Orbit.UIPadding_45.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_45.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_64.Parent = Orbit.Sit
+Orbit.UIAspectRatioConstraint_64.AspectRatio = 4.000
+
+Orbit.UIAspectRatioConstraint_65.Parent = Orbit.SitFrame
+Orbit.UIAspectRatioConstraint_65.AspectRatio = 7.459
+
+Orbit.InfiniteJumpFrame.Name = "InfiniteJumpFrame"
+Orbit.InfiniteJumpFrame.Parent = Orbit.ScrollingFrame
+Orbit.InfiniteJumpFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Orbit.InfiniteJumpFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.InfiniteJumpFrame.BorderSizePixel = 0
+Orbit.InfiniteJumpFrame.Position = UDim2.new(0.0280082989, 0, 0, 0)
+Orbit.InfiniteJumpFrame.Size = UDim2.new(0.943983376, 0, 0.0355477855, 0)
+
+Orbit.UICorner_45.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_45.Parent = Orbit.InfiniteJumpFrame
+
+Orbit.Title_21.Name = "Title"
+Orbit.Title_21.Parent = Orbit.InfiniteJumpFrame
+Orbit.Title_21.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_21.BackgroundTransparency = 1.000
+Orbit.Title_21.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Title_21.BorderSizePixel = 0
+Orbit.Title_21.Position = UDim2.new(0.0593406595, 0, 0.0819672123, 0)
+Orbit.Title_21.Size = UDim2.new(0.342857152, 0, 0.819672108, 0)
+Orbit.Title_21.Font = Enum.Font.SourceSansBold
+Orbit.Title_21.Text = "Infinite Jump"
+Orbit.Title_21.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_21.TextScaled = true
+Orbit.Title_21.TextSize = 30.000
+Orbit.Title_21.TextWrapped = true
+Orbit.Title_21.TextXAlignment = Enum.TextXAlignment.Left
+
+Orbit.UIPadding_46.Parent = Orbit.Title_21
+Orbit.UIPadding_46.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_46.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_66.Parent = Orbit.Title_21
+Orbit.UIAspectRatioConstraint_66.AspectRatio = 3.120
+
+Orbit.ON_6.Name = "ON"
+Orbit.ON_6.Parent = Orbit.InfiniteJumpFrame
+Orbit.ON_6.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.ON_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.ON_6.BorderSizePixel = 0
+Orbit.ON_6.Position = UDim2.new(0.767530918, 0, 0.0819672123, 0)
+Orbit.ON_6.Size = UDim2.new(0.206593409, 0, 0.819672108, 0)
+Orbit.ON_6.Font = Enum.Font.SourceSansBold
+Orbit.ON_6.Text = "ON"
+Orbit.ON_6.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.ON_6.TextScaled = true
+Orbit.ON_6.TextSize = 30.000
+Orbit.ON_6.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.ON_6.TextWrapped = true
+
+Orbit.UICorner_46.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_46.Parent = Orbit.ON_6
+
+Orbit.UIPadding_47.Parent = Orbit.ON_6
+Orbit.UIPadding_47.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_47.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_67.Parent = Orbit.ON_6
+Orbit.UIAspectRatioConstraint_67.AspectRatio = 1.880
+
+Orbit.OFF_6.Name = "OFF"
+Orbit.OFF_6.Parent = Orbit.InfiniteJumpFrame
+Orbit.OFF_6.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.OFF_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.OFF_6.BorderSizePixel = 0
+Orbit.OFF_6.Position = UDim2.new(0.540659368, 0, 0.0819672123, 0)
+Orbit.OFF_6.Size = UDim2.new(0.206593409, 0, 0.819672108, 0)
+Orbit.OFF_6.Font = Enum.Font.SourceSansBold
+Orbit.OFF_6.Text = "OFF"
+Orbit.OFF_6.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.OFF_6.TextScaled = true
+Orbit.OFF_6.TextSize = 30.000
+Orbit.OFF_6.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.OFF_6.TextWrapped = true
+
+Orbit.UICorner_47.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_47.Parent = Orbit.OFF_6
+
+Orbit.UIPadding_48.Parent = Orbit.OFF_6
+Orbit.UIPadding_48.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_48.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_68.Parent = Orbit.OFF_6
+Orbit.UIAspectRatioConstraint_68.AspectRatio = 1.880
+
+Orbit.UIAspectRatioConstraint_69.Parent = Orbit.InfiniteJumpFrame
+Orbit.UIAspectRatioConstraint_69.AspectRatio = 7.459
+
+Orbit.FloatFrame.Name = "FloatFrame"
+Orbit.FloatFrame.Parent = Orbit.ScrollingFrame
+Orbit.FloatFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Orbit.FloatFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.FloatFrame.BorderSizePixel = 0
+Orbit.FloatFrame.Position = UDim2.new(0.0280082989, 0, 0, 0)
+Orbit.FloatFrame.Size = UDim2.new(0.943983376, 0, 0.0355477855, 0)
+
+Orbit.UICorner_48.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_48.Parent = Orbit.FloatFrame
+
+Orbit.Title_22.Name = "Title"
+Orbit.Title_22.Parent = Orbit.FloatFrame
+Orbit.Title_22.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_22.BackgroundTransparency = 1.000
+Orbit.Title_22.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Title_22.BorderSizePixel = 0
+Orbit.Title_22.Position = UDim2.new(0.0593406595, 0, 0.0819672123, 0)
+Orbit.Title_22.Size = UDim2.new(0.342857152, 0, 0.819672108, 0)
+Orbit.Title_22.Font = Enum.Font.SourceSansBold
+Orbit.Title_22.Text = "Float"
+Orbit.Title_22.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_22.TextScaled = true
+Orbit.Title_22.TextSize = 30.000
+Orbit.Title_22.TextWrapped = true
+Orbit.Title_22.TextXAlignment = Enum.TextXAlignment.Left
+
+Orbit.UIPadding_49.Parent = Orbit.Title_22
+Orbit.UIPadding_49.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_49.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_70.Parent = Orbit.Title_22
+Orbit.UIAspectRatioConstraint_70.AspectRatio = 3.120
+
+Orbit.ON_7.Name = "ON"
+Orbit.ON_7.Parent = Orbit.FloatFrame
+Orbit.ON_7.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.ON_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.ON_7.BorderSizePixel = 0
+Orbit.ON_7.Position = UDim2.new(0.767530918, 0, 0.0819672123, 0)
+Orbit.ON_7.Size = UDim2.new(0.206593409, 0, 0.819672108, 0)
+Orbit.ON_7.Font = Enum.Font.SourceSansBold
+Orbit.ON_7.Text = "ON"
+Orbit.ON_7.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.ON_7.TextScaled = true
+Orbit.ON_7.TextSize = 30.000
+Orbit.ON_7.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.ON_7.TextWrapped = true
+
+Orbit.UICorner_49.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_49.Parent = Orbit.ON_7
+
+Orbit.UIPadding_50.Parent = Orbit.ON_7
+Orbit.UIPadding_50.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_50.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_71.Parent = Orbit.ON_7
+Orbit.UIAspectRatioConstraint_71.AspectRatio = 1.880
+
+Orbit.OFF_7.Name = "OFF"
+Orbit.OFF_7.Parent = Orbit.FloatFrame
+Orbit.OFF_7.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.OFF_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.OFF_7.BorderSizePixel = 0
+Orbit.OFF_7.Position = UDim2.new(0.540659368, 0, 0.0819672123, 0)
+Orbit.OFF_7.Size = UDim2.new(0.206593409, 0, 0.819672108, 0)
+Orbit.OFF_7.Font = Enum.Font.SourceSansBold
+Orbit.OFF_7.Text = "OFF"
+Orbit.OFF_7.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.OFF_7.TextScaled = true
+Orbit.OFF_7.TextSize = 30.000
+Orbit.OFF_7.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.OFF_7.TextWrapped = true
+
+Orbit.UICorner_50.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_50.Parent = Orbit.OFF_7
+
+Orbit.UIPadding_51.Parent = Orbit.OFF_7
+Orbit.UIPadding_51.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_51.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_72.Parent = Orbit.OFF_7
+Orbit.UIAspectRatioConstraint_72.AspectRatio = 1.880
+
+Orbit.UIAspectRatioConstraint_73.Parent = Orbit.FloatFrame
+Orbit.UIAspectRatioConstraint_73.AspectRatio = 7.459
+
+Orbit.HeadlessFrame.Name = "HeadlessFrame"
+Orbit.HeadlessFrame.Parent = Orbit.ScrollingFrame
+Orbit.HeadlessFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Orbit.HeadlessFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.HeadlessFrame.BorderSizePixel = 0
+Orbit.HeadlessFrame.Position = UDim2.new(0.0280082989, 0, 0, 0)
+Orbit.HeadlessFrame.Size = UDim2.new(0.943983376, 0, 0.0355477855, 0)
+
+Orbit.UICorner_51.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_51.Parent = Orbit.HeadlessFrame
+
+Orbit.Title_23.Name = "Title"
+Orbit.Title_23.Parent = Orbit.HeadlessFrame
+Orbit.Title_23.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_23.BackgroundTransparency = 1.000
+Orbit.Title_23.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Title_23.BorderSizePixel = 0
+Orbit.Title_23.Position = UDim2.new(0.0593406595, 0, 0.0819672123, 0)
+Orbit.Title_23.Size = UDim2.new(0.342857152, 0, 0.819672108, 0)
+Orbit.Title_23.Font = Enum.Font.SourceSansBold
+Orbit.Title_23.Text = "Headless"
+Orbit.Title_23.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_23.TextScaled = true
+Orbit.Title_23.TextSize = 30.000
+Orbit.Title_23.TextWrapped = true
+Orbit.Title_23.TextXAlignment = Enum.TextXAlignment.Left
+
+Orbit.UIPadding_52.Parent = Orbit.Title_23
+Orbit.UIPadding_52.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_52.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_74.Parent = Orbit.Title_23
+Orbit.UIAspectRatioConstraint_74.AspectRatio = 3.120
+
+Orbit.Headless.Name = "Headless"
+Orbit.Headless.Parent = Orbit.HeadlessFrame
+Orbit.Headless.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.Headless.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Headless.BorderSizePixel = 0
+Orbit.Headless.Position = UDim2.new(0.540659368, 0, 0.0819672123, 0)
+Orbit.Headless.Size = UDim2.new(0.439560443, 0, 0.819672108, 0)
+Orbit.Headless.Font = Enum.Font.SourceSansBold
+Orbit.Headless.Text = "CLICK HERE"
+Orbit.Headless.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Headless.TextScaled = true
+Orbit.Headless.TextSize = 30.000
+Orbit.Headless.TextWrapped = true
+
+Orbit.UICorner_52.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_52.Parent = Orbit.Headless
+
+Orbit.UIPadding_53.Parent = Orbit.Headless
+Orbit.UIPadding_53.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_53.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_75.Parent = Orbit.Headless
+Orbit.UIAspectRatioConstraint_75.AspectRatio = 4.000
+
+Orbit.UIAspectRatioConstraint_76.Parent = Orbit.HeadlessFrame
+Orbit.UIAspectRatioConstraint_76.AspectRatio = 7.459
+
+Orbit.KorbloxFrame.Name = "KorbloxFrame"
+Orbit.KorbloxFrame.Parent = Orbit.ScrollingFrame
+Orbit.KorbloxFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Orbit.KorbloxFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.KorbloxFrame.BorderSizePixel = 0
+Orbit.KorbloxFrame.Position = UDim2.new(0.0280082989, 0, 0, 0)
+Orbit.KorbloxFrame.Size = UDim2.new(0.943983376, 0, 0.0355477855, 0)
+
+Orbit.UICorner_53.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_53.Parent = Orbit.KorbloxFrame
+
+Orbit.Title_24.Name = "Title"
+Orbit.Title_24.Parent = Orbit.KorbloxFrame
+Orbit.Title_24.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_24.BackgroundTransparency = 1.000
+Orbit.Title_24.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Title_24.BorderSizePixel = 0
+Orbit.Title_24.Position = UDim2.new(0.0593406595, 0, 0.0819672123, 0)
+Orbit.Title_24.Size = UDim2.new(0.342857152, 0, 0.819672108, 0)
+Orbit.Title_24.Font = Enum.Font.SourceSansBold
+Orbit.Title_24.Text = "Korblox"
+Orbit.Title_24.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_24.TextScaled = true
+Orbit.Title_24.TextSize = 30.000
+Orbit.Title_24.TextWrapped = true
+Orbit.Title_24.TextXAlignment = Enum.TextXAlignment.Left
+
+Orbit.UIPadding_54.Parent = Orbit.Title_24
+Orbit.UIPadding_54.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_54.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_77.Parent = Orbit.Title_24
+Orbit.UIAspectRatioConstraint_77.AspectRatio = 3.120
+
+Orbit.Korblox.Name = "Korblox"
+Orbit.Korblox.Parent = Orbit.KorbloxFrame
+Orbit.Korblox.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.Korblox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Korblox.BorderSizePixel = 0
+Orbit.Korblox.Position = UDim2.new(0.540659368, 0, 0.0819672123, 0)
+Orbit.Korblox.Size = UDim2.new(0.439560443, 0, 0.819672108, 0)
+Orbit.Korblox.Font = Enum.Font.SourceSansBold
+Orbit.Korblox.Text = "CLICK HERE"
+Orbit.Korblox.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Korblox.TextScaled = true
+Orbit.Korblox.TextSize = 30.000
+Orbit.Korblox.TextWrapped = true
+
+Orbit.UICorner_54.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_54.Parent = Orbit.Korblox
+
+Orbit.UIPadding_55.Parent = Orbit.Korblox
+Orbit.UIPadding_55.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_55.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_78.Parent = Orbit.Korblox
+Orbit.UIAspectRatioConstraint_78.AspectRatio = 4.000
+
+Orbit.UIAspectRatioConstraint_79.Parent = Orbit.KorbloxFrame
+Orbit.UIAspectRatioConstraint_79.AspectRatio = 7.459
+
+Orbit.MoonwalkFrame.Name = "MoonwalkFrame"
+Orbit.MoonwalkFrame.Parent = Orbit.ScrollingFrame
+Orbit.MoonwalkFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Orbit.MoonwalkFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.MoonwalkFrame.BorderSizePixel = 0
+Orbit.MoonwalkFrame.Position = UDim2.new(0.0280082989, 0, 0, 0)
+Orbit.MoonwalkFrame.Size = UDim2.new(0.943983376, 0, 0.0355477855, 0)
+
+Orbit.UICorner_55.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_55.Parent = Orbit.MoonwalkFrame
+
+Orbit.Title_25.Name = "Title"
+Orbit.Title_25.Parent = Orbit.MoonwalkFrame
+Orbit.Title_25.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_25.BackgroundTransparency = 1.000
+Orbit.Title_25.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Title_25.BorderSizePixel = 0
+Orbit.Title_25.Position = UDim2.new(0.0593406595, 0, 0.0819672123, 0)
+Orbit.Title_25.Size = UDim2.new(0.342857152, 0, 0.819672108, 0)
+Orbit.Title_25.Font = Enum.Font.SourceSansBold
+Orbit.Title_25.Text = "Moonwalk"
+Orbit.Title_25.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_25.TextScaled = true
+Orbit.Title_25.TextSize = 30.000
+Orbit.Title_25.TextWrapped = true
+Orbit.Title_25.TextXAlignment = Enum.TextXAlignment.Left
+
+Orbit.UIPadding_56.Parent = Orbit.Title_25
+Orbit.UIPadding_56.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_56.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_80.Parent = Orbit.Title_25
+Orbit.UIAspectRatioConstraint_80.AspectRatio = 3.120
+
+Orbit.ON_8.Name = "ON"
+Orbit.ON_8.Parent = Orbit.MoonwalkFrame
+Orbit.ON_8.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.ON_8.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.ON_8.BorderSizePixel = 0
+Orbit.ON_8.Position = UDim2.new(0.767530918, 0, 0.0819672123, 0)
+Orbit.ON_8.Size = UDim2.new(0.206593409, 0, 0.819672108, 0)
+Orbit.ON_8.Font = Enum.Font.SourceSansBold
+Orbit.ON_8.Text = "ON"
+Orbit.ON_8.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.ON_8.TextScaled = true
+Orbit.ON_8.TextSize = 30.000
+Orbit.ON_8.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.ON_8.TextWrapped = true
+
+Orbit.UICorner_56.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_56.Parent = Orbit.ON_8
+
+Orbit.UIPadding_57.Parent = Orbit.ON_8
+Orbit.UIPadding_57.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_57.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_81.Parent = Orbit.ON_8
+Orbit.UIAspectRatioConstraint_81.AspectRatio = 1.880
+
+Orbit.OFF_8.Name = "OFF"
+Orbit.OFF_8.Parent = Orbit.MoonwalkFrame
+Orbit.OFF_8.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.OFF_8.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.OFF_8.BorderSizePixel = 0
+Orbit.OFF_8.Position = UDim2.new(0.540659368, 0, 0.0819672123, 0)
+Orbit.OFF_8.Size = UDim2.new(0.206593409, 0, 0.819672108, 0)
+Orbit.OFF_8.Font = Enum.Font.SourceSansBold
+Orbit.OFF_8.Text = "OFF"
+Orbit.OFF_8.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.OFF_8.TextScaled = true
+Orbit.OFF_8.TextSize = 30.000
+Orbit.OFF_8.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.OFF_8.TextWrapped = true
+
+Orbit.UICorner_57.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_57.Parent = Orbit.OFF_8
+
+Orbit.UIPadding_58.Parent = Orbit.OFF_8
+Orbit.UIPadding_58.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_58.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_82.Parent = Orbit.OFF_8
+Orbit.UIAspectRatioConstraint_82.AspectRatio = 1.880
+
+Orbit.UIAspectRatioConstraint_83.Parent = Orbit.MoonwalkFrame
+Orbit.UIAspectRatioConstraint_83.AspectRatio = 7.459
+
+Orbit.UIAspectRatioConstraint_84.Parent = Orbit.ScrollingFrame
+Orbit.UIAspectRatioConstraint_84.AspectRatio = 1.365
+
+Orbit.BenchPressFrame.Name = "BenchPressFrame"
+Orbit.BenchPressFrame.Parent = Orbit.ScrollingFrame
+Orbit.BenchPressFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Orbit.BenchPressFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.BenchPressFrame.BorderSizePixel = 0
+Orbit.BenchPressFrame.Position = UDim2.new(0.0280082989, 0, 0, 0)
+Orbit.BenchPressFrame.Size = UDim2.new(0.943983376, 0, 0.0355477855, 0)
+
+Orbit.UICorner_58.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_58.Parent = Orbit.BenchPressFrame
+
+Orbit.Title_26.Name = "Title"
+Orbit.Title_26.Parent = Orbit.BenchPressFrame
+Orbit.Title_26.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_26.BackgroundTransparency = 1.000
+Orbit.Title_26.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Title_26.BorderSizePixel = 0
+Orbit.Title_26.Position = UDim2.new(0.0593406595, 0, 0.0819672123, 0)
+Orbit.Title_26.Size = UDim2.new(0.342857152, 0, 0.819672108, 0)
+Orbit.Title_26.Font = Enum.Font.SourceSansBold
+Orbit.Title_26.Text = "Bench Press"
+Orbit.Title_26.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_26.TextScaled = true
+Orbit.Title_26.TextSize = 30.000
+Orbit.Title_26.TextWrapped = true
+Orbit.Title_26.TextXAlignment = Enum.TextXAlignment.Left
+
+Orbit.UIPadding_59.Parent = Orbit.Title_26
+Orbit.UIPadding_59.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_59.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_85.Parent = Orbit.Title_26
+Orbit.UIAspectRatioConstraint_85.AspectRatio = 3.120
+
+Orbit.BenchPress.Name = "BenchPress"
+Orbit.BenchPress.Parent = Orbit.BenchPressFrame
+Orbit.BenchPress.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.BenchPress.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.BenchPress.BorderSizePixel = 0
+Orbit.BenchPress.Position = UDim2.new(0.540659368, 0, 0.0819672123, 0)
+Orbit.BenchPress.Size = UDim2.new(0.439560443, 0, 0.819672108, 0)
+Orbit.BenchPress.Font = Enum.Font.SourceSansBold
+Orbit.BenchPress.Text = "CLICK HERE"
+Orbit.BenchPress.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.BenchPress.TextScaled = true
+Orbit.BenchPress.TextSize = 30.000
+Orbit.BenchPress.TextWrapped = true
+
+Orbit.UICorner_59.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_59.Parent = Orbit.BenchPress
+
+Orbit.UIPadding_60.Parent = Orbit.BenchPress
+Orbit.UIPadding_60.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_60.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_86.Parent = Orbit.BenchPress
+Orbit.UIAspectRatioConstraint_86.AspectRatio = 4.000
+
+Orbit.UIAspectRatioConstraint_87.Parent = Orbit.BenchPressFrame
+Orbit.UIAspectRatioConstraint_87.AspectRatio = 7.459
+
+Orbit.PunchingBagFrame.Name = "PunchingBagFrame"
+Orbit.PunchingBagFrame.Parent = Orbit.ScrollingFrame
+Orbit.PunchingBagFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Orbit.PunchingBagFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.PunchingBagFrame.BorderSizePixel = 0
+Orbit.PunchingBagFrame.Position = UDim2.new(0.0280082989, 0, 0, 0)
+Orbit.PunchingBagFrame.Size = UDim2.new(0.943983376, 0, 0.0355477855, 0)
+
+Orbit.UICorner_60.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_60.Parent = Orbit.PunchingBagFrame
+
+Orbit.Title_27.Name = "Title"
+Orbit.Title_27.Parent = Orbit.PunchingBagFrame
+Orbit.Title_27.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_27.BackgroundTransparency = 1.000
+Orbit.Title_27.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.Title_27.BorderSizePixel = 0
+Orbit.Title_27.Position = UDim2.new(0.0593406595, 0, 0.0819672123, 0)
+Orbit.Title_27.Size = UDim2.new(0.342857152, 0, 0.819672108, 0)
+Orbit.Title_27.Font = Enum.Font.SourceSansBold
+Orbit.Title_27.Text = "Punching bag"
+Orbit.Title_27.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.Title_27.TextScaled = true
+Orbit.Title_27.TextSize = 30.000
+Orbit.Title_27.TextWrapped = true
+Orbit.Title_27.TextXAlignment = Enum.TextXAlignment.Left
+
+Orbit.UIPadding_61.Parent = Orbit.Title_27
+Orbit.UIPadding_61.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_61.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_88.Parent = Orbit.Title_27
+Orbit.UIAspectRatioConstraint_88.AspectRatio = 3.120
+
+Orbit.PunchingBag.Name = "PunchingBag"
+Orbit.PunchingBag.Parent = Orbit.PunchingBagFrame
+Orbit.PunchingBag.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+Orbit.PunchingBag.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.PunchingBag.BorderSizePixel = 0
+Orbit.PunchingBag.Position = UDim2.new(0.540659368, 0, 0.0819672123, 0)
+Orbit.PunchingBag.Size = UDim2.new(0.439560443, 0, 0.819672108, 0)
+Orbit.PunchingBag.Font = Enum.Font.SourceSansBold
+Orbit.PunchingBag.Text = "CLICK HERE"
+Orbit.PunchingBag.TextColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.PunchingBag.TextScaled = true
+Orbit.PunchingBag.TextSize = 30.000
+Orbit.PunchingBag.TextWrapped = true
+
+Orbit.UICorner_61.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_61.Parent = Orbit.PunchingBag
+
+Orbit.UIPadding_62.Parent = Orbit.PunchingBag
+Orbit.UIPadding_62.PaddingBottom = UDim.new(0.200000003, 0)
+Orbit.UIPadding_62.PaddingTop = UDim.new(0.200000003, 0)
+
+Orbit.UIAspectRatioConstraint_89.Parent = Orbit.PunchingBag
+Orbit.UIAspectRatioConstraint_89.AspectRatio = 4.000
+
+Orbit.UIAspectRatioConstraint_90.Parent = Orbit.PunchingBagFrame
+Orbit.UIAspectRatioConstraint_90.AspectRatio = 7.459
+
+Orbit.UIAspectRatioConstraint_91.Parent = Orbit.MainFrame
+Orbit.UIAspectRatioConstraint_91.AspectRatio = 1.170
+
+Orbit.MenuFrame.Name = "MenuFrame"
+Orbit.MenuFrame.Parent = Orbit.Orbit
+Orbit.MenuFrame.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+Orbit.MenuFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.MenuFrame.BorderSizePixel = 0
+Orbit.MenuFrame.Position = UDim2.new(0.485212743, 0, 0.0126103405, 0)
+Orbit.MenuFrame.Size = UDim2.new(0, 50, 0, 50)
+
+Orbit.UICorner_62.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_62.Parent = Orbit.MenuFrame
+
+Orbit.OpenAndClose.Name = "OpenAndClose"
+Orbit.OpenAndClose.Parent = Orbit.MenuFrame
+Orbit.OpenAndClose.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.OpenAndClose.BackgroundTransparency = 1.000
+Orbit.OpenAndClose.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Orbit.OpenAndClose.BorderSizePixel = 0
+Orbit.OpenAndClose.Size = UDim2.new(0, 50, 0, 50)
+Orbit.OpenAndClose.Image = "rbxassetid://76509370028275"
+
+Orbit.UICorner_63.CornerRadius = UDim.new(1, 0)
+Orbit.UICorner_63.Parent = Orbit.OpenAndClose
+
+-- Scripts:
+
+local function UQBDMSB_fake_script() -- Orbit.Orbit.OrbitCommands 
+	local script = Instance.new('LocalScript', Orbit.Orbit)
+
+	local Players = game:GetService("Players")
+	local RunService = game:GetService("RunService")
+	local UserInputService = game:GetService("UserInputService")
+	local Lighting = game:GetService("Lighting")
+	local TeleportService = game:GetService("TeleportService")
+	local ReplicatedStorage = game:GetService("ReplicatedStorage")
+	
+	local player = Players.LocalPlayer
+	local orbit = script.Parent
+	local scrolling = orbit:WaitForChild("MainFrame"):WaitForChild("ScrollingFrame")
+	
+	local DEFAULT_WALKSPEED = 16
+	local DEFAULT_JUMPPOWER = 50
+	
+	local settings = {
+		walkSpeed = DEFAULT_WALKSPEED,
+		jumpPower = DEFAULT_JUMPPOWER,
+		hipHeight = nil,
+	}
+	
+	local flags = {
+		flying = false,
+		noclipping = false,
+		spinSpeed = 0,
+		infiniteJump = false,
+		moonwalking = false,
+		invisible = false,
+		headless = false,
+		korblox = false,
+		dancing = false,
+		waving = false,
+		floating = false,
+		spying = false,
+		benching = false,
+		punching = false,
+	}
+	
+	-- ===== Helpers =====
+	local function getCharacter()
+		return player.Character
+	end
+	
+	local function getHumanoid()
+		local char = getCharacter()
+		return char and char:FindFirstChildOfClass("Humanoid")
+	end
+	
+	local function getRoot()
+		local char = getCharacter()
+		return char and char:FindFirstChild("HumanoidRootPart")
+	end
+	
+	local function getControl(frameName, controlName)
+		local frame = scrolling:FindFirstChild(frameName)
+		return frame and frame:FindFirstChild(controlName)
+	end
+	
+	local function wireButton(frameName, buttonName, fn)
+		local button = getControl(frameName, buttonName)
+		if button then
+			button.Activated:Connect(fn)
+		else
+			warn("[Orbit] missing button " .. frameName .. "/" .. buttonName)
+		end
+	end
+	
+	local function wireToggle(frameName, onFn, offFn)
+		wireButton(frameName, "ON", onFn)
+		wireButton(frameName, "OFF", offFn)
+	end
+	
+	local function bindNumber(frameName, controlName, label, callback)
+		local control = getControl(frameName, controlName)
+		if not control then
+			warn("[Orbit] missing textbox " .. frameName .. "/" .. controlName)
+			return
+		end
+		control.FocusLost:Connect(function()
+			local value = tonumber(control.Text)
+			if value then
+				callback(value)
+				print(("[Orbit] %s set to %s"):format(label, tostring(value)))
+			else
+				warn("[Orbit] '" .. tostring(control.Text) .. "' is not a valid number for " .. label)
+			end
+		end)
+	end
+	
+	local function stopEmoteTracks()
+		local hum = getHumanoid()
+		if not hum then
+			return
+		end
+		local animator = hum:FindFirstChildOfClass("Animator")
+		if animator then
+			for _, track in animator:GetPlayingAnimationTracks() do
+				track:Stop(0.1)
+			end
+		end
+	end
+	
+	local function emoteLoop(emoteName, flagKey)
+		task.spawn(function()
+			while flags[flagKey] do
+				local hum = getHumanoid()
+				if hum then
+					pcall(function()
+						hum:PlayEmote(emoteName)
+					end)
+					task.wait(0.25)
+				else
+					task.wait(0.5)
+				end
+			end
+		end)
+	end
+	
+	-- ===== Continuous loops =====
+	RunService.RenderStepped:Connect(function(dt)
+		local root = getRoot()
+		local hum = getHumanoid()
+		if not root or not hum then
+			return
+		end
+	
+		if flags.flying then
+			local velocity = hum.MoveDirection * 60
+			if UserInputService:IsKeyDown(Enum.KeyCode.E) then
+				velocity += Vector3.new(0, 60, 0)
+			end
+			if UserInputService:IsKeyDown(Enum.KeyCode.Q) then
+				velocity -= Vector3.new(0, 60, 0)
+			end
+			root.AssemblyLinearVelocity = velocity
+		end
+	
+		if flags.spinSpeed ~= 0 then
+			root.CFrame = root.CFrame * CFrame.Angles(0, math.rad(flags.spinSpeed) * dt, 0)
+		end
+	
+		if flags.moonwalking and hum.MoveDirection.Magnitude > 0.05 then
+			root.CFrame = CFrame.lookAt(root.Position, root.Position - hum.MoveDirection)
+		end
+	end)
+	
+	RunService.Stepped:Connect(function()
+		if not flags.noclipping then
+			return
+		end
+		local char = getCharacter()
+		if not char then
+			return
+		end
+		if char:IsA("BasePart") then
+			char.CanCollide = false
+		end
+		for _, inst in char:GetDescendants() do
+			if inst:IsA("BasePart") then
+				inst.CanCollide = false
+			end
+		end
+	end)
+	
+	UserInputService.JumpRequest:Connect(function()
+		if flags.infiniteJump then
+			local hum = getHumanoid()
+			if hum then
+				hum:ChangeState(Enum.HumanoidStateType.Jumping)
+			end
+		end
+	end)
+	
+	-- ===== Feature functions =====
+	local invisibleStore = {}
+	local function setInvisible(on)
+		local char = getCharacter()
+		if not char then
+			return
+		end
+		flags.invisible = on
+		if on then
+			for _, inst in char:GetDescendants() do
+				if inst:IsA("BasePart") or inst:IsA("Decal") then
+					invisibleStore[inst] = inst.Transparency
+					inst.Transparency = 1
+				end
+			end
+		else
+			for inst, original in invisibleStore do
+				if inst and inst.Parent then
+					inst.Transparency = original
+				end
+			end
+			table.clear(invisibleStore)
+		end
+		print("[Orbit] Invisible " .. (on and "ON" or "OFF"))
+	end
+	
+	local headlessStore = {}
+	local function setHeadless(on)
+		local char = getCharacter()
+		if not char then
+			return
+		end
+		local head = char:FindFirstChild("Head")
+		if not head then
+			return
+		end
+		flags.headless = on
+		if on then
+			headlessStore[head] = head.Transparency
+			head.Transparency = 1
+			local face = head:FindFirstChildOfClass("Decal")
+			if face then
+				headlessStore[face] = face.Transparency
+				face.Transparency = 1
+			end
+		else
+			for inst, original in headlessStore do
+				if inst and inst.Parent then
+					inst.Transparency = original
+				end
+			end
+			table.clear(headlessStore)
+		end
+		print("[Orbit] Headless " .. (on and "ON" or "OFF"))
+	end
+	
+	local korbloxStore = {}
+	local function getRightLegParts()
+		local char = getCharacter()
+		local hum = getHumanoid()
+		if not char or not hum then
+			return {}
+		end
+		local parts = {}
+		if hum.RigType == Enum.HumanoidRigType.R15 then
+			for _, name in {"RightFoot", "RightLowerLeg", "RightUpperLeg"} do
+				local part = char:FindFirstChild(name)
+				if part then
+					table.insert(parts, part)
+				end
+			end
+		else
+			local part = char:FindFirstChild("Right Leg")
+			if part then
+				table.insert(parts, part)
+			end
+		end
+		return parts
+	end
+	
+	local function setKorblox(on)
+		flags.korblox = on
+		if on then
+			for _, part in getRightLegParts() do
+				korbloxStore[part] = part.Transparency
+				part.Transparency = 1
+			end
+		else
+			for inst, original in korbloxStore do
+				if inst and inst.Parent then
+					inst.Transparency = original
+				end
+			end
+			table.clear(korbloxStore)
+		end
+		print("[Orbit] Korblox " .. (on and "ON" or "OFF"))
+	end
+	
+	local floatForce, floatAttachment
+	local function setFloat(on)
+		flags.floating = on
+		local hum = getHumanoid()
+		local root = getRoot()
+		if on then
+			if not root or not hum then
+				return
+			end
+			floatAttachment = Instance.new("Attachment")
+			floatAttachment.Name = "OrbitFloatAttachment"
+			floatAttachment.Parent = root
+			floatForce = Instance.new("VectorForce")
+			floatForce.Name = "OrbitFloatForce"
+			floatForce.Attachment0 = floatAttachment
+			floatForce.RelativeTo = Enum.ActuatorRelativeTo.World
+			floatForce.Force = Vector3.new(0, root.AssemblyMass * workspace.Gravity, 0)
+			floatForce.Parent = root
+			hum.PlatformStand = true
+		else
+			if floatForce then
+				floatForce:Destroy()
+				floatForce = nil
+			end
+			if floatAttachment then
+				floatAttachment:Destroy()
+				floatAttachment = nil
+			end
+			if hum then
+				hum.PlatformStand = false
+			end
+		end
+		print("[Orbit] Float " .. (on and "ON" or "OFF"))
+	end
+	
+	-- ===== Rain =====
+	local rainPart, rainConnection
+	local function removeRain()
+		if rainConnection then
+			rainConnection:Disconnect()
+			rainConnection = nil
+		end
+		if rainPart then
+			rainPart:Destroy()
+			rainPart = nil
+		end
+		print("[Orbit] Rain removed")
+	end
+	
+	local function startRain()
+		removeRain()
+		local root = getRoot()
+		if not root then
+			return
+		end
+		rainPart = Instance.new("Part")
+		rainPart.Name = "OrbitRain"
+		rainPart.Size = Vector3.new(60, 1, 60)
+		rainPart.Transparency = 1
+		rainPart.Anchored = true
+		rainPart.CanCollide = false
+		rainPart.CanQuery = false
+		rainPart.CastShadow = false
+	
+		local emitter = Instance.new("ParticleEmitter")
+		emitter.Name = "RainDrop"
+		emitter.Texture = "rbxasset://textures/particles/smoke_main.dds"
+		emitter.Color = ColorSequence.new(Color3.fromRGB(170, 200, 255))
+		emitter.Size = NumberSequence.new(0.3)
+		emitter.Transparency = NumberSequence.new(0.4)
+		emitter.Speed = NumberRange.new(40, 45)
+		emitter.Lifetime = NumberRange.new(1, 1.3)
+		emitter.Rate = 300
+		emitter.EmissionDirection = Enum.NormalId.Bottom
+		emitter.SpreadAngle = Vector2.new(3, 3)
+		emitter.Acceleration = Vector3.new(0, -20, 0)
+		emitter.Parent = rainPart
+	
+		rainPart.Parent = workspace.CurrentCamera
+		rainConnection = RunService.RenderStepped:Connect(function()
+			local r = getRoot()
+			if r and rainPart then
+				rainPart.CFrame = r.CFrame + Vector3.new(0, 45, 0)
+			end
+		end)
+		print("[Orbit] Rain ON")
+	end
+	
+	-- ===== Remote spy =====
+	local spyConnections = {}
+	local spyBound = {}
+	
+	local function collectRemotes()
+		local remotes = {}
+		for _, inst in ReplicatedStorage:GetDescendants() do
+			if inst:IsA("RemoteEvent") or inst:IsA("RemoteFunction") then
+				table.insert(remotes, inst)
+			end
+		end
+		for _, inst in workspace:GetDescendants() do
+			if inst:IsA("RemoteEvent") or inst:IsA("RemoteFunction") then
+				table.insert(remotes, inst)
+			end
+		end
+		return remotes
+	end
+	
+	local function startSpy()
+		flags.spying = true
+		local eventCount = 0
+		for _, remote in collectRemotes() do
+			if not spyBound[remote] then
+				spyBound[remote] = true
+				if remote:IsA("RemoteEvent") then
+					local conn = remote.OnClientEvent:Connect(function(...)
+						if flags.spying then
+							print("[RemoteSpy] OnClientEvent " .. remote:GetFullName(), ...)
+						end
+					end)
+					table.insert(spyConnections, conn)
+					eventCount += 1
+				else
+					remote.OnClientInvoke = function(...)
+						if flags.spying then
+							print("[RemoteSpy] OnClientInvoke " .. remote:GetFullName(), ...)
+						end
+					end
+				end
+			end
+		end
+		print("[RemoteSpy] started - watching " .. eventCount .. " remote events (client receives)")
+	end
+	
+	local function turtleSpyDump()
+		local remotes = collectRemotes()
+		print(("[TurtleSpy] %d remotes found:"):format(#remotes))
+		for _, remote in remotes do
+			print("[TurtleSpy] " .. remote.ClassName .. " | " .. remote:GetFullName())
+		end
+	end
+	
+	-- ===== Gym auto-fire (BenchPress / PunchingBag) =====
+	local function gymLoop(flagKey, remoteCalls)
+		task.spawn(function()
+			local remotesFolder = ReplicatedStorage:WaitForChild("Remotes", 5)
+			local resolved = {}
+			for _, call in remoteCalls do
+				local remote = remotesFolder and remotesFolder:FindFirstChild(call.name)
+				if remote then
+					table.insert(resolved, { remote, call.args })
+				else
+					warn("[Orbit] remote not found: Remotes/" .. call.name)
+				end
+			end
+			if #resolved == 0 then
+				warn("[Orbit] no remotes found for " .. flagKey .. " - stopping loop")
+				flags[flagKey] = false
+				return
+			end
+			while flags[flagKey] do
+				for _, entry in resolved do
+					if not flags[flagKey] then
+						break
+					end
+					pcall(function()
+						entry[1]:FireServer(unpack(entry[2]))
+					end)
+				end
+				task.wait()
+			end
+		end)
+	end
+	
+	-- ===== TextBox settings =====
+	bindNumber("SpeedFrame", "Speed", "Speed", function(n)
+		n = math.clamp(n, 0, 500)
+		settings.walkSpeed = n
+		local hum = getHumanoid()
+		if hum then
+			hum.WalkSpeed = n
+		end
+	end)
+	
+	bindNumber("JumpFrame", "Jump", "Jump", function(n)
+		n = math.clamp(n, 0, 1000)
+		settings.jumpPower = n
+		local hum = getHumanoid()
+		if hum then
+			hum.UseJumpPower = true
+			hum.JumpPower = n
+		end
+	end)
+	
+	bindNumber("GravityFrame", "Gravity", "Gravity", function(n)
+		workspace.Gravity = math.clamp(n, 0, 1000)
+	end)
+	
+	bindNumber("HipheightFrame", "Hipheight", "Hipheight", function(n)
+		n = math.clamp(n, 0, 20)
+		settings.hipHeight = n
+		local hum = getHumanoid()
+		if hum then
+			hum.HipHeight = n
+		end
+	end)
+	
+	bindNumber("SpinFrame", "Spin", "Spin", function(n)
+		flags.spinSpeed = math.clamp(n, -1000, 1000)
+	end)
+	
+	-- ===== Button wiring =====
+	wireToggle("FlyFrame",
+		function()
+			flags.flying = true
+			print("[Orbit] Fly ON (WASD to move, E up, Q down)")
+		end,
+		function()
+			flags.flying = false
+			local root = getRoot()
+			if root then
+				root.AssemblyLinearVelocity = Vector3.zero
+			end
+			print("[Orbit] Fly OFF")
+		end
+	)
+	
+	wireToggle("NoClipFrame",
+		function()
+			flags.noclipping = true
+			print("[Orbit] NoClip ON")
+		end,
+		function()
+			flags.noclipping = false
+			print("[Orbit] NoClip OFF")
+		end
+	)
+	
+	wireToggle("InvisibleFrame",
+		function()
+			setInvisible(true)
+		end,
+		function()
+			setInvisible(false)
+		end
+	)
+	
+	wireToggle("DanceFrame",
+		function()
+			flags.dancing = true
+			emoteLoop("dance", "dancing")
+			print("[Orbit] Dance ON")
+		end,
+		function()
+			flags.dancing = false
+			stopEmoteTracks()
+			print("[Orbit] Dance OFF")
+		end
+	)
+	
+	wireToggle("WaveFrame",
+		function()
+			flags.waving = true
+			emoteLoop("wave", "waving")
+			print("[Orbit] Wave ON")
+		end,
+		function()
+			flags.waving = false
+			stopEmoteTracks()
+			print("[Orbit] Wave OFF")
+		end
+	)
+	
+	wireToggle("InfiniteJumpFrame",
+		function()
+			flags.infiniteJump = true
+			print("[Orbit] Infinite Jump ON")
+		end,
+		function()
+			flags.infiniteJump = false
+			print("[Orbit] Infinite Jump OFF")
+		end
+	)
+	
+	wireToggle("FloatFrame",
+		function()
+			setFloat(true)
+		end,
+		function()
+			setFloat(false)
+		end
+	)
+	
+	wireToggle("MoonwalkFrame",
+		function()
+			flags.moonwalking = true
+			local hum = getHumanoid()
+			if hum then
+				hum.AutoRotate = false
+			end
+			print("[Orbit] Moonwalk ON")
+		end,
+		function()
+			flags.moonwalking = false
+			local hum = getHumanoid()
+			if hum then
+				hum.AutoRotate = true
+			end
+			print("[Orbit] Moonwalk OFF")
+		end
+	)
+	
+	wireButton("KorbloxFrame", "Korblox", function()
+		setKorblox(not flags.korblox)
+	end)
+	
+	wireButton("HeadlessFrame", "Headless", function()
+		setHeadless(not flags.headless)
+	end)
+	
+	wireButton("SitFrame", "Sit", function()
+		local hum = getHumanoid()
+		if hum then
+			hum.Sit = true
+		end
+	end)
+	
+	wireButton("DayFrame", "Day", function()
+		Lighting.ClockTime = 14
+		print("[Orbit] Time set to day")
+	end)
+	
+	wireButton("NightFrame", "Night", function()
+		Lighting.ClockTime = 0
+		print("[Orbit] Time set to night")
+	end)
+	
+	wireButton("RainFrame", "Rain", function()
+		startRain()
+	end)
+	
+	wireButton("RemoveRainFrame", "RemoveRain", function()
+		removeRain()
+	end)
+	
+	wireButton("PrintFrame", "Print", function()
+		local hum = getHumanoid()
+		print(("[Orbit] Player: %s | PlaceId: %d | WalkSpeed: %s | JumpPower: %s | Gravity: %s"):format(
+			player.Name, game.PlaceId,
+			hum and tostring(hum.WalkSpeed) or "n/a",
+			hum and tostring(hum.JumpPower) or "n/a",
+			tostring(workspace.Gravity)))
+	end)
+	
+	wireButton("RejoinFrame", "Rejoin", function()
+		print("[Orbit] Rejoining...")
+		local ok, err = pcall(function()
+			TeleportService:Teleport(game.PlaceId, player)
+		end)
+		if not ok then
+			warn("[Orbit] Rejoin failed: " .. tostring(err))
+		end
+	end)
+	
+	wireButton("RemoteSpyFrame", "RemoteSpy", function()
+		if flags.spying then
+			flags.spying = false
+			for _, conn in spyConnections do
+				conn:Disconnect()
+			end
+			table.clear(spyConnections)
+			table.clear(spyBound)
+			print("[RemoteSpy] stopped")
+		else
+			startSpy()
+		end
+	end)
+	
+	wireButton("TurtleSpyFrame", "TurtleSpy", function()
+		turtleSpyDump()
+	end)
+	
+	wireButton("BenchPressFrame", "BenchPress", function()
+		if flags.benching then
+			flags.benching = false
+			print("[Orbit] BenchPress auto-fire OFF")
+		else
+			flags.benching = true
+			gymLoop("benching", {
+				{ name = "PushUp", args = { "{}" } },
+				{ name = "Bench", args = { "{}" } },
+			})
+			print("[Orbit] BenchPress auto-fire ON")
+		end
+	end)
+	
+	wireButton("PunchingBagFrame", "PunchingBag", function()
+		if flags.punching then
+			flags.punching = false
+			print("[Orbit] PunchingBag auto-fire OFF")
+		else
+			flags.punching = true
+			gymLoop("punching", {
+				{ name = "HandKick", args = {} },
+				{ name = "JumpKick", args = {} },
+				{ name = "DoubleReg", args = {} },
+			})
+			print("[Orbit] PunchingBag auto-fire ON")
+		end
+	end)
+	
+	-- ===== Search box filter =====
+	local searchBox = orbit:WaitForChild("MainFrame"):WaitForChild("TopBar"):WaitForChild("SearchBox")
+	searchBox:GetPropertyChangedSignal("Text"):Connect(function()
+		local query = string.lower(searchBox.Text)
+		for _, frame in scrolling:GetChildren() do
+			if frame:IsA("Frame") then
+				local title = frame:FindFirstChild("Title")
+				local name = title and title.Text or frame.Name
+				frame.Visible = query == "" or string.find(string.lower(name), query, 1, true) ~= nil
+			end
+		end
+	end)
+	
+	-- ===== Reapply settings on respawn =====
+	player.CharacterAdded:Connect(function(char)
+		local hum = char:WaitForChild("Humanoid")
+		hum.WalkSpeed = settings.walkSpeed
+		hum.UseJumpPower = true
+		hum.JumpPower = settings.jumpPower
+		if settings.hipHeight then
+			hum.HipHeight = settings.hipHeight
+		end
+		if flags.invisible then
+			task.defer(setInvisible, true)
+		end
+		if flags.headless then
+			task.defer(setHeadless, true)
+		end
+		if flags.korblox then
+			task.defer(setKorblox, true)
+		end
+		if flags.floating then
+			task.defer(setFloat, true)
+		end
+	end)
+	
+	print("[Orbit] Command panel loaded")
+	
+end
+coroutine.wrap(UQBDMSB_fake_script)()
