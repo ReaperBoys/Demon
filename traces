@@ -1,0 +1,58 @@
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local Camera = workspace.CurrentCamera
+
+local LocalPlayer = Players.LocalPlayer
+
+local Tracers = {}
+
+local function CreateTracer(player)
+    if player == LocalPlayer then return end
+
+    local Line = Drawing.new("Line")
+    Line.Thickness = 1.5
+    Line.Transparency = 1
+    Line.Color = Color3.fromRGB(255, 0, 0)
+    Line.Visible = false
+
+    Tracers[player] = Line
+end
+
+local function RemoveTracer(player)
+    if Tracers[player] then
+        Tracers[player]:Remove()
+        Tracers[player] = nil
+    end
+end
+
+for _, player in pairs(Players:GetPlayers()) do
+    CreateTracer(player)
+end
+
+Players.PlayerAdded:Connect(CreateTracer)
+Players.PlayerRemoving:Connect(RemoveTracer)
+
+RunService.RenderStepped:Connect(function()
+    for player, line in pairs(Tracers) do
+        local character = player.Character
+        local root = character and character:FindFirstChild("HumanoidRootPart")
+
+        if root then
+            local position, onScreen =
+                Camera:WorldToViewportPoint(root.Position)
+
+            if onScreen then
+                line.From = Vector2.new(
+                    Camera.ViewportSize.X / 2,
+                    Camera.ViewportSize.Y
+                )
+                line.To = Vector2.new(position.X, position.Y)
+                line.Visible = true
+            else
+                line.Visible = false
+            end
+        else
+            line.Visible = false
+        end
+    end
+end)
