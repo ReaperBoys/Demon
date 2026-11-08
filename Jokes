@@ -1,0 +1,30 @@
+local Players = game:GetService("Players")
+local TextChatService = game:GetService("TextChatService")
+
+local jokes = {
+    "Why did the chicken cross the road? To get to the other side!",
+    "Why do programmers prefer dark mode? Because light attracts bugs!",
+    "What do you call a sleeping bull? A bulldozer!",
+    "Why was the math book sad? It had too many problems!",
+    "What is a computer's favourite snack? Microchips!",
+    "Why did the Roblox player go to school? To improve their game!",
+    "What do you call a fake noodle? An impasta!",
+    "Why can't your nose be 12 inches long? Because then it would be a foot!"
+}
+
+local function tellJoke()
+    local joke = jokes[math.random(1, #jokes)]
+    local channel = TextChatService.TextChannels:FindFirstChild("RBXGeneral")
+
+    if channel then
+        channel:DisplaySystemMessage(
+            "<font color='#00FF00'>[Joke] " .. joke .. "</font>"
+        )
+    end
+end
+
+Players.LocalPlayer.Chatted:Connect(function(message)
+    if message:lower() == ";joke" then
+        tellJoke()
+    end
+end)
