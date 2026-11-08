@@ -1,0 +1,27 @@
+local Players = game:GetService("Players")
+local TextChatService = game:GetService("TextChatService")
+
+local function whoCommand()
+    local names = {}
+
+    for _, player in ipairs(Players:GetPlayers()) do
+        table.insert(names, player.Name)
+    end
+
+    local message = "Players in server (" .. #names .. "): " ..
+        table.concat(names, ", ")
+
+    local channel = TextChatService.TextChannels:FindFirstChild("RBXGeneral")
+
+    if channel then
+        channel:DisplaySystemMessage(
+            "<font color='#00FF00'>" .. message .. "</font>"
+        )
+    end
+end
+
+Players.LocalPlayer.Chatted:Connect(function(message)
+    if message:lower() == ";p" then
+        whoCommand()
+    end
+end)
